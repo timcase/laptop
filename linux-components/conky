@@ -1,0 +1,3 @@
+fancy_echo "Installing conky..."
+sudo apt-get install conky-all
+sudo apt-get install conky curl lm-sensors hddtemp

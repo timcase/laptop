@@ -61,9 +61,6 @@ fancy_echo "Installing libraries for common gem dependencies ..."
 fancy_echo "Installing Postgres, a good open source relational database ..."
   sudo aptitude install -y postgresql postgresql-server-dev-all
 
-fancy_echo "Installing Redis, a good key-value database ..."
-  sudo aptitude install -y redis-server
-
 fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
   sudo aptitude install -y exuberant-ctags
 
@@ -76,19 +73,12 @@ fancy_echo "Installing tmux, to save project state and switch between projects .
 fancy_echo "Installing ImageMagick, to crop and resize images ..."
   sudo aptitude install -y imagemagick
 
-fancy_echo "Installing watch, to execute a program periodically and show the output ..."
-  sudo aptitude install -y watch
-
 fancy_echo "Installing curl ..."
   sudo aptitude install -y curl
 
 fancy_echo "Installing zsh ..."
   sudo aptitude install -y zsh
 ### end linux-components/debian-derivative-packages
-
-fancy_echo "Changing your shell to zsh ..."
-  chsh -s $(which zsh)
-### end common-components/zsh
 
 if ! which ag &>/dev/null; then
   fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
@@ -103,30 +93,38 @@ if ! which ag &>/dev/null; then
 fi
 ### end linux-components/silver-searcher-from-source
 
-if [[ ! -d "$HOME/.rbenv" ]]; then
-  fancy_echo "Installing rbenv, to change Ruby versions ..."
-    git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+fancy_echo "Install bitstream vera sans"
+sudo apt-get install ttf-bitstream-vera
+### end linux-components/vera-bitstream-sans
 
-    if ! grep -qs "rbenv init" ~/.zshrc; then
-      echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+fancy_echo "Installing gnome-terminal..."
+sudo apt-get install gnome-terminal
+### end linux-components/gnome-terminal
 
-      echo 'eval "$(rbenv init - --no-rehash)"' >> ~/.zshrc
-    fi
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:keithw/mosh
+sudo apt-get update
+sudo apt-get install mosh
+### end linux-components/mosh
 
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-fi
+fancy_echo "Installing firefox..."
+sudo apt-get install firefox
+### end linux-components/firefox
 
-if [[ ! -d "$HOME/.rbenv/plugins/rbenv-gem-rehash" ]]; then
-  fancy_echo "Installing rbenv-gem-rehash so the shell automatically picks up binaries after installing gems with binaries..."
-    git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-fi
+fancy_echo "Installing Google Chrome..."
+sudo apt-get install libxss1
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+### end linux-components/chrome
 
-if [[ ! -d "$HOME/.rbenv/plugins/ruby-build" ]]; then
-  fancy_echo "Installing ruby-build, to install Rubies ..."
-    git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-fi
-### end linux-components/rbenv
+fancy_echo "Installing RVM, to change ruby versions..."
+
+\curl -sSL https://get.rvm.io | bash
+
+fancy_echo "Adding progress bar to rvm"
+
+echo progress-bar >> ~/.curlrc
+### end linux-components/rvm
 
 RUBY_VERSION="2.1.0"
 
@@ -153,20 +151,130 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   bundle config --global jobs $((number_of_cores - 1))
 ### end linux-components/bundler
 
-fancy_echo "Installing Rails ..."
-  gem install rails --no-document
+fancy_echo "Installing IRB tools ..."
+  gem install irb-tools --no-document
+
+fancy_echo "Installing Capistrano 2.15.5..."
+  gem install capistrano -v '2.15.5' --no-document
 ### end common-components/default-gems
 
-fancy_echo "Installing Heroku CLI client ..."
-  curl -s https://toolbelt.heroku.com/install-ubuntu.sh | sh
+fancy_echo 'Installing dotfiles...'
+curl -Lo- http://bit.ly/1jDwRX3 | bash
+### end common-components/dotfiles
 
-fancy_echo "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables ..."
-  heroku plugins:install git://github.com/ddollar/heroku-config.git
-### end linux-components/heroku
+fancy_echo "Installing Dropbox..."
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
 
-fancy_echo "Installing rcm, to manage your dotfiles ..."
-  wget -O /tmp/rcm_1.1.0_all.deb http://mike-burns.com/project/rcm/rcm_1.1.0_all.deb
-  sudo dpkg -i /tmp/rcm_1.1.0_all.deb
-  rm -f /tmp/rcm_1.1.0_all.deb
-### end linux-components/rcm
+fancy_echo "Installing Dropbox CLI tools..."
+wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod 755 ~/bin/dropbox.py
+
+fancy_echo "Installing Dropbox to run on startup..."
+wget -O ~/etc/init.d/init/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
+sudo chmod +x /etc/init.d/dropbox
+sudo update-rc.d dropbox defaults
+
+### end linux-components/dropbox
+
+ln -nfs ~/Dropbox/.ssh ~/.ssh
+### end linux-components/symlink-dropbox-dot-ssh
+
+### end 
+
+fancy_echo "Installing archive formats..."
+sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+### end linux-components/archive-formats
+
+fancy_echo "Installing codec..."
+sudo apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-ffmpeg libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav
+### end linux-components/codecs
+
+fancy_echo "Installing conky..."
+sudo apt-get install conky-all
+sudo apt-get install conky curl lm-sensors hddtemp
+### end linux-components/conky
+
+fancy_echo "Installing dragondisk..."
+sudo apt-get install libssl0.9.8
+wget http://download.dragondisk.com/dragondisk_1.0.5-0ubuntu_amd64.deb
+sudo apt-get install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
+sudo dpkg -i dragondisk_1.0.5-0ubuntu_amd64.deb
+
+### end linux-components/dragondisk
+
+fancy_echo "Installing flash plugin..."
+sudo apt-get install flashplugin-installer
+### end linux-components/flash
+
+fancy_echo "Installing gedit..."
+sudo apt-get install gedit
+### end linux-components/gedit
+
+fancy_echo "Installing gimp..."
+sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
+### end linux-components/gimp
+
+fancy_echo "Installing git-gui..."
+sudo apt-get install git-gui
+### end linux-components/git-gui
+
+fancy_echo "Installing mupdf..."
+sudo add-apt-repository ppa:guilhem-fr/mupdf
+sudo apt-get update
+sudo apt-get install mupdf
+### end linux-components/mupdf
+
+fancy_echo "Installing nixnote..."
+sudo add-apt-repository ppa:vincent-c/nevernote
+sudo apt-get update
+sudo apt-get install nixnote
+### end linux-components/nixnote
+
+fancy_echo "Installing pidgin..."
+sudo apt-get install pidgin
+### end linux-components/pidgin
+
+fancy_echo "Installing Skype..."
+sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo apt-get update
+sudo apt-get install skype
+### end linux-components/skype
+
+fancy_echo "Installing Spotify..."
+sudo chmod o+w /etc/apt/sources.list
+sudo echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+sudo apt-get update
+sudo apt-get install -y spotify-client
+### end linux-components/spotify
+
+fancy_echo "Installing thunderbird..."
+sudo apt-get install thunderbird
+### end linux-components/thunderbird
+
+fancy_echo "Installing TLP..."
+sudo apt-get remove laptop-mode-tools
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp tlp
+sudo tlp start
+### end linux-components/tlp
+
+fancy_echo "Installing ubuntu tweak..."
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-get update
+sudo apt-get install ubuntu-tweak
+### end linux-components/ubuntu-tweak
+
+fancy_echo "Installing VLC..."
+sudo apt-get update
+sudo apt-get install vlc browser-plugin-vlc
+### end linux-components/vlc
+
+fancy_echo "Installing wallch..."
+sudo add-apt-repository ppa:wallch/version-3-ppa
+sudo apt-get update
+sudo apt-get install wallch
+### end linux-components/wallch
 

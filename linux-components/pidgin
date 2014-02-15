@@ -1,0 +1,2 @@
+fancy_echo "Installing pidgin..."
+sudo apt-get install pidgin

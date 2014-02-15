@@ -1,0 +1,2 @@
+fancy_echo "Installing gnome-terminal..."
+sudo apt-get install gnome-terminal
