@@ -1,0 +1,7 @@
+fancy_echo "Installing RVM, to change ruby versions..."
+
+\curl -sSL https://get.rvm.io | bash
+
+fancy_echo "Adding progress bar to rvm"
+
+echo progress-bar >> ~/.curlrc

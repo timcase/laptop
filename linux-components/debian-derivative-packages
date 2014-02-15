@@ -10,9 +10,6 @@ fancy_echo "Installing libraries for common gem dependencies ..."
 fancy_echo "Installing Postgres, a good open source relational database ..."
   sudo aptitude install -y postgresql postgresql-server-dev-all
 
-fancy_echo "Installing Redis, a good key-value database ..."
-  sudo aptitude install -y redis-server
-
 fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
   sudo aptitude install -y exuberant-ctags
 
@@ -24,9 +21,6 @@ fancy_echo "Installing tmux, to save project state and switch between projects .
 
 fancy_echo "Installing ImageMagick, to crop and resize images ..."
   sudo aptitude install -y imagemagick
-
-fancy_echo "Installing watch, to execute a program periodically and show the output ..."
-  sudo aptitude install -y watch
 
 fancy_echo "Installing curl ..."
   sudo aptitude install -y curl

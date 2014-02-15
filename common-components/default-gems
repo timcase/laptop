@@ -1,2 +1,5 @@
-fancy_echo "Installing Rails ..."
-  gem install rails --no-document
+fancy_echo "Installing IRB tools ..."
+  gem install irb-tools --no-document
+
+fancy_echo "Installing Capistrano 2.15.5..."
+  gem install capistrano -v '2.15.5' --no-document
