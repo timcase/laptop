@@ -1,4 +1,4 @@
 fancy_echo "Installing nixnote..."
 sudo add-apt-repository ppa:vincent-c/nevernote
 sudo apt-get update
-sudo apt-get install nixnote
+sudo apt-get install -y nixnote

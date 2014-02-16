@@ -1,2 +1,2 @@
 fancy_echo "Installing git-gui..."
-sudo apt-get install git-gui
+sudo apt-get install -y git-gui

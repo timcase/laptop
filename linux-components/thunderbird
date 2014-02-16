@@ -1,2 +1,2 @@
 fancy_echo "Installing thunderbird..."
-sudo apt-get install thunderbird
+sudo apt-get install -y thunderbird
