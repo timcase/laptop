@@ -129,10 +129,6 @@ fancy_echo "Source rvm..."
 source ~/.rvm/scripts/rvm
 ### end linux-components/rvm
 
-fancy_echo 'Installing dotfiles...'
-curl -Lo- http://bit.ly/1jDwRX3 | bash
-### end common-components/dotfiles
-
 RUBY_VERSION="2.1.0"
 
 fancy_echo "Installing Ruby $RUBY_VERSION ..."
@@ -162,7 +158,14 @@ fancy_echo "Installing IRB tools ..."
 
 fancy_echo "Installing Capistrano 2.15.5..."
   gem install capistrano -v '2.15.5' --no-document
+
+fancy_echo "Installing Rake..."
+  gem install rake
 ### end common-components/default-gems
+
+fancy_echo 'Installing dotfiles...'
+curl -Lo- http://bit.ly/1jDwRX3 | bash
+### end common-components/dotfiles
 
 fancy_echo "Installing Dropbox..."
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
