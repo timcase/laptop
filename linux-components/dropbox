@@ -1,7 +1,3 @@
-fancy_echo "Installing Dropbox..."
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
-
 fancy_echo "Installing Dropbox CLI tools..."
 wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod 755 ~/bin/dropbox.py
@@ -11,3 +7,6 @@ wget -O ~/etc/init.d/init/dropbox "https://gist.github.com/timcase/aeb93cf00e17b
 sudo chmod +x /etc/init.d/dropbox
 sudo update-rc.d dropbox defaults
 
+fancy_echo "Installing Dropbox..."
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd

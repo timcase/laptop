@@ -17,8 +17,6 @@ common-components/ruby-environment
 linux-components/bundler
 common-components/default-gems
 common-components/dotfiles
-linux-components/dropbox
-linux-components/symlink-dropbox-dot-ssh
 linux-components/archive-formats
 linux-components/codecs
 linux-components/conky
@@ -37,3 +35,5 @@ linux-components/tlp
 linux-components/ubuntu-tweak
 linux-components/vlc
 linux-components/wallch
+linux-components/symlink-dropbox-dot-ssh
+linux-components/dropbox

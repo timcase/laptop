@@ -168,24 +168,6 @@ fancy_echo 'Installing dotfiles...'
 curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
 
-fancy_echo "Installing Dropbox..."
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
-
-fancy_echo "Installing Dropbox CLI tools..."
-wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod 755 ~/bin/dropbox.py
-
-fancy_echo "Installing Dropbox to run on startup..."
-wget -O ~/etc/init.d/init/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
-sudo chmod +x /etc/init.d/dropbox
-sudo update-rc.d dropbox defaults
-
-### end linux-components/dropbox
-
-ln -nfs ~/Dropbox/.ssh ~/.ssh
-### end linux-components/symlink-dropbox-dot-ssh
-
 fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-components/archive-formats
@@ -281,4 +263,21 @@ sudo add-apt-repository -y ppa:wallch/version-3-ppa
 sudo apt-get update
 sudo apt-get install -y wallch
 ### end linux-components/wallch
+
+ln -nfs ~/Dropbox/.ssh ~/.ssh
+### end linux-components/symlink-dropbox-dot-ssh
+
+fancy_echo "Installing Dropbox CLI tools..."
+wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod 755 ~/bin/dropbox.py
+
+fancy_echo "Installing Dropbox to run on startup..."
+wget -O ~/etc/init.d/init/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
+sudo chmod +x /etc/init.d/dropbox
+sudo update-rc.d dropbox defaults
+
+fancy_echo "Installing Dropbox..."
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
+### end linux-components/dropbox
 
