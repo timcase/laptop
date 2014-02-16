@@ -3,7 +3,7 @@ wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py
 chmod 755 ~/bin/dropbox.py
 
 fancy_echo "Installing Dropbox to run on startup..."
-wget -O /etc/init.d/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
+sudo wget -O /etc/init.d/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
 sudo chmod +x /etc/init.d/dropbox
 sudo update-rc.d dropbox defaults
 
