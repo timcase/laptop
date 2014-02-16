@@ -126,7 +126,7 @@ fancy_echo "Adding progress bar to rvm..."
 echo progress-bar >> ~/.curlrc
 
 fancy_echo "Source rvm..."
-"[[ -s “$HOME/.rvm/scripts/rvm” ]] && . “$HOME/.rvm/scripts/rvm”"
+source ~/.rvm/scripts/rvm
 ### end linux-components/rvm
 
 fancy_echo 'Installing dotfiles...'
