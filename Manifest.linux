@@ -18,7 +18,6 @@ linux-components/bundler
 common-components/default-gems
 common-components/dotfiles
 linux-components/archive-formats
-linux-components/codecs
 linux-components/conky
 linux-components/dragondisk
 linux-components/flash
