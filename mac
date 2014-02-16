@@ -144,13 +144,13 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
 ### end mac-components/bundler
 
 fancy_echo "Installing IRB tools ..."
-  gem install irb-tools --no-document
+  gem install irbtools --no-document
 
 fancy_echo "Installing Capistrano 2.15.5..."
   gem install capistrano -v '2.15.5' --no-document
 
 fancy_echo "Installing Rake..."
-  gem install rake
+  gem install rake --no-document
 ### end common-components/default-gems
 
 fancy_echo "Installing Heroku CLI client ..."
