@@ -13,13 +13,12 @@ linux-components/mosh
 linux-components/firefox
 linux-components/chrome
 linux-components/rvm
+common-components/dotfiles
 common-components/ruby-environment
 linux-components/bundler
 common-components/default-gems
-common-components/dotfiles
 linux-components/dropbox
 linux-components/symlink-dropbox-dot-ssh
-
 linux-components/archive-formats
 linux-components/codecs
 linux-components/conky
