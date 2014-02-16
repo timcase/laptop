@@ -94,25 +94,25 @@ fi
 ### end linux-components/silver-searcher-from-source
 
 fancy_echo "Install bitstream vera sans"
-sudo apt-get install ttf-bitstream-vera
+sudo apt-get install -y ttf-bitstream-vera
 ### end linux-components/vera-bitstream-sans
 
 fancy_echo "Installing gnome-terminal..."
-sudo apt-get install gnome-terminal
+sudo apt-get -y install gnome-terminal
 ### end linux-components/gnome-terminal
 
-sudo apt-get install python-software-properties
+sudo apt-get install -y python-software-properties
 sudo add-apt-repository ppa:keithw/mosh
 sudo apt-get update
-sudo apt-get install mosh
+sudo apt-get install -y mosh
 ### end linux-components/mosh
 
 fancy_echo "Installing firefox..."
-sudo apt-get install firefox
+sudo apt-get install -y firefox
 ### end linux-components/firefox
 
 fancy_echo "Installing Google Chrome..."
-sudo apt-get install libxss1
+sudo apt-get install -y libxss1 xdg-utils
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 ### end linux-components/chrome
@@ -129,11 +129,10 @@ echo progress-bar >> ~/.curlrc
 RUBY_VERSION="2.1.0"
 
 fancy_echo "Installing Ruby $RUBY_VERSION ..."
-  rbenv install $RUBY_VERSION
+  rvm install $RUBY_VERSION
 
 fancy_echo "Setting $RUBY_VERSION as global default Ruby ..."
-  rbenv global $RUBY_VERSION
-  rbenv rehash
+  rvm --default use $RUBY_VERSION
 
 fancy_echo "Updating to latest Rubygems version ..."
   gem update --system
@@ -183,40 +182,40 @@ ln -nfs ~/Dropbox/.ssh ~/.ssh
 ### end 
 
 fancy_echo "Installing archive formats..."
-sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-components/archive-formats
 
 fancy_echo "Installing codec..."
-sudo apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-ffmpeg libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav
+sudo apt-get install -y gstreamer0.10-plugins-ugly gstreamer0.10-ffmpeg libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav
 ### end linux-components/codecs
 
 fancy_echo "Installing conky..."
-sudo apt-get install conky-all
-sudo apt-get install conky curl lm-sensors hddtemp
+sudo apt-get -y install conky-all
+sudo apt-get -y install conky curl lm-sensors hddtemp
 ### end linux-components/conky
 
 fancy_echo "Installing dragondisk..."
-sudo apt-get install libssl0.9.8
+sudo apt-get -y install libssl0.9.8
 wget http://download.dragondisk.com/dragondisk_1.0.5-0ubuntu_amd64.deb
-sudo apt-get install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
+sudo apt-get -y install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
 sudo dpkg -i dragondisk_1.0.5-0ubuntu_amd64.deb
 
 ### end linux-components/dragondisk
 
 fancy_echo "Installing flash plugin..."
-sudo apt-get install flashplugin-installer
+sudo apt-get install -y flashplugin-installer
 ### end linux-components/flash
 
 fancy_echo "Installing gedit..."
-sudo apt-get install gedit
+sudo apt-get -y install gedit
 ### end linux-components/gedit
 
 fancy_echo "Installing gimp..."
-sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
+sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
 ### end linux-components/gimp
 
 fancy_echo "Installing git-gui..."
-sudo apt-get install git-gui
+sudo apt-get install -y git-gui
 ### end linux-components/git-gui
 
 fancy_echo "Installing mupdf..."
@@ -228,17 +227,17 @@ sudo apt-get install mupdf
 fancy_echo "Installing nixnote..."
 sudo add-apt-repository ppa:vincent-c/nevernote
 sudo apt-get update
-sudo apt-get install nixnote
+sudo apt-get install -y nixnote
 ### end linux-components/nixnote
 
 fancy_echo "Installing pidgin..."
-sudo apt-get install pidgin
+sudo apt-get install -y pidgin
 ### end linux-components/pidgin
 
 fancy_echo "Installing Skype..."
 sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo apt-get update
-sudo apt-get install skype
+sudo apt-get install -y skype
 ### end linux-components/skype
 
 fancy_echo "Installing Spotify..."
@@ -250,31 +249,31 @@ sudo apt-get install -y spotify-client
 ### end linux-components/spotify
 
 fancy_echo "Installing thunderbird..."
-sudo apt-get install thunderbird
+sudo apt-get install -y thunderbird
 ### end linux-components/thunderbird
 
 fancy_echo "Installing TLP..."
 sudo apt-get remove laptop-mode-tools
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-sudo apt-get install tlp tlp
+sudo apt-get install -y tlp
 sudo tlp start
 ### end linux-components/tlp
 
 fancy_echo "Installing ubuntu tweak..."
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-get update
-sudo apt-get install ubuntu-tweak
+sudo apt-get install -y ubuntu-tweak
 ### end linux-components/ubuntu-tweak
 
 fancy_echo "Installing VLC..."
 sudo apt-get update
-sudo apt-get install vlc browser-plugin-vlc
+sudo apt-get install -y vlc browser-plugin-vlc
 ### end linux-components/vlc
 
 fancy_echo "Installing wallch..."
 sudo add-apt-repository ppa:wallch/version-3-ppa
 sudo apt-get update
-sudo apt-get install wallch
+sudo apt-get install -y wallch
 ### end linux-components/wallch
 
