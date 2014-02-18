@@ -1,1 +1,5 @@
+fancy_echo "Symlink .ssh at Dropbox"
 ln -nfs ~/Dropbox/.ssh ~/.ssh
+chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
+chmod go-wr ~/.ssh/endpoint
+chmod go-wr ~/.ssh/id_dsa
