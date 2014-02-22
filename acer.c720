@@ -1,0 +1,12 @@
+fancy_echo "Fixing chrome touchpad on acer c720..."
+sudo add-apt-repository ppa:hugegreenbug/cmt
+sudo apt-get update
+sudo apt-get install -y libevdevc
+sudo apt-get install -y libgestures
+sudo apt-get install -y xf86-input-cmt
+sudo mv /usr/share/X11/xorg.conf.d/50-synaptics.conf /usr/share/X11/xorg.conf.d/50-synaptics.conf.old
+sudo cp /usr/share/xf86-input-cmt/50-touchpad-cmt-peppy.conf /usr/share/X11/xorg.conf.d/
+fancy_echo "REBOOTING NOW!!!"
+sudo reboot
+### end acer-c720-components/chrome-touchpad-fix
+
