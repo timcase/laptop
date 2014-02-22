@@ -17,7 +17,7 @@ linux-xfce-components/xubuntu-icon-theme
 
 linux-common-components/mosh
 linux-common-components/firefox
-linux-common-components/chrome
+linux-xfce-components/chrome
 linux-common-components/rvm
 common-components/ruby-environment
 linux-common-components/bundler

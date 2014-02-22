@@ -128,11 +128,11 @@ sudo apt-get install -y firefox
 ### end linux-common-components/firefox
 
 fancy_echo "Installing Google Chrome..."
-sudo apt-get install -y libxss1 xdg-utils
+sudo apt-get install -y libxss1 xdg-utils libnsp4 libnss3
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
-### end linux-common-components/chrome
+### end linux-gnome-components/chrome
 
 fancy_echo "Installing RVM, to change ruby versions..."
 
