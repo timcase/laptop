@@ -1,0 +1,2 @@
+fancy_echo "Installing leafpad..."
+sudo apt-get install -y leafpad

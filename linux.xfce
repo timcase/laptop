@@ -1,0 +1,307 @@
+#!/usr/bin/env bash
+### end common-components/bash-shebang
+
+# Welcome to the thoughtbot laptop script! Be prepared to turn your laptop (or
+# desktop, no haters here) into an awesome development machine.
+
+# This file is auto-generated. Do not edit it by hand unless you know what
+# you're doing. Please see 'CONTRIBUTING.md' for more information.
+### end common-components/header
+
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+
+set -e
+### end common-components/exit-trap
+
+if [[ ! -d "$HOME/.bin/" ]]; then
+  mkdir "$HOME/.bin"
+fi
+
+if [ ! -f "$HOME/.zshrc" ]; then
+  touch $HOME/.zshrc
+fi
+
+if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
+  echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.zshrc
+  export PATH="$HOME/.bin:$PATH"
+fi
+### end common-components/check-home-bin
+
+fancy_echo() {
+  printf "\n%b\n" "$1"
+}
+### end common-components/shared-functions
+
+if ! grep -qiE 'precise|quantal|wheezy|raring|jessie|saucy' /etc/os-release; then
+  fancy_echo "Sorry! we don't currently support that distro."
+  exit 1
+fi
+### end linux-common-components/distro-check
+
+fancy_echo "Updating system packages ..."
+  if command -v aptitude >/dev/null; then
+    fancy_echo "Using aptitude ..."
+  else
+    fancy_echo "Installing aptitude ..."
+    sudo apt-get install -y aptitude
+  fi
+
+  sudo aptitude update
+### end linux-common-components/debian-package-update
+
+fancy_echo "Installing git, for source control management ..."
+  sudo aptitude install -y git
+
+fancy_echo "Installing base ruby build dependencies ..."
+  sudo aptitude build-dep -y ruby1.9.3
+
+fancy_echo "Installing libraries for common gem dependencies ..."
+  sudo aptitude install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
+
+fancy_echo "Installing Postgres, a good open source relational database ..."
+  sudo aptitude install -y postgresql postgresql-server-dev-all
+
+fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
+  sudo aptitude install -y exuberant-ctags
+
+fancy_echo "Installing vim ..."
+  sudo aptitude install -y vim-gtk
+
+fancy_echo "Installing tmux, to save project state and switch between projects ..."
+  sudo aptitude install -y tmux
+
+fancy_echo "Installing ImageMagick, to crop and resize images ..."
+  sudo aptitude install -y imagemagick
+
+fancy_echo "Installing curl ..."
+  sudo aptitude install -y curl
+
+fancy_echo "Installing zsh ..."
+  sudo aptitude install -y zsh
+### end linux-common-components/debian-derivative-packages
+
+fancy_echo "Install ubuntu update manager..."
+sudo apt-get install -y update-manager
+### end linux-common-components/update-manager
+
+if ! which ag &>/dev/null; then
+  fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
+    git clone git://github.com/ggreer/the_silver_searcher.git /tmp/the_silver_searcher
+    sudo aptitude install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
+    sh /tmp/the_silver_searcher/build.sh
+    cd /tmp/the_silver_searcher
+    sh build.sh
+    sudo make install
+    cd
+    rm -rf /tmp/the_silver_searcher
+fi
+### end linux-common-components/silver-searcher-from-source
+
+fancy_echo "Install bitstream vera sans"
+sudo apt-get install -y ttf-bitstream-vera
+### end linux-common-components/vera-bitstream-sans
+
+### end 
+
+fancy_echo "Installing kupfer..."
+sudo apt-get install -y kupfer
+### end linux-xfce-components/kupfer
+
+fancy_echo "Installing leafpad..."
+sudo apt-get install -y leafpad
+### end linux-xfce-components/leafpad
+
+fancy_echo "Removing xscreensaver..."
+sudo apt-get remove -y xscreensaver
+### end linux-xfce-components/xscreensaver
+
+fancy_echo "Installing xubuntu-icon-theme..."
+sudo apt-get install -y xubuntu-icon-theme
+
+### end linux-xfce-components/xubuntu-icon-theme
+
+### end 
+
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository -y ppa:keithw/mosh
+sudo apt-get update
+sudo apt-get install -y mosh
+### end linux-common-components/mosh
+
+fancy_echo "Installing firefox..."
+sudo apt-get install -y firefox
+### end linux-common-components/firefox
+
+fancy_echo "Installing Google Chrome..."
+sudo apt-get install -y libxss1 xdg-utils
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+rm google-chrome*.deb
+### end linux-common-components/chrome
+
+fancy_echo "Installing RVM, to change ruby versions..."
+
+\curl -sSL https://get.rvm.io | bash
+
+fancy_echo "Adding progress bar to rvm..."
+
+echo progress-bar >> ~/.curlrc
+
+fancy_echo "Source rvm..."
+source ~/.rvm/scripts/rvm
+### end linux-common-components/rvm
+
+RUBY_VERSION="2.1.0"
+
+fancy_echo "Installing Ruby $RUBY_VERSION ..."
+  rvm install $RUBY_VERSION
+
+fancy_echo "Setting $RUBY_VERSION as global default Ruby ..."
+  rvm --default use $RUBY_VERSION
+
+fancy_echo "Updating to latest Rubygems version ..."
+  gem update --system
+
+fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
+  gem install bundler --no-document --pre
+
+fancy_echo "Installing GitHub CLI client ..."
+  curl http://hub.github.com/standalone -sLo ~/.bin/hub
+  chmod +x ~/.bin/hub
+### end common-components/ruby-environment
+
+fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
+  number_of_cores=$(nproc)
+  bundle config --global jobs $((number_of_cores - 1))
+### end linux-common-components/bundler
+
+fancy_echo "Installing IRB tools ..."
+  gem install irbtools --no-document
+
+fancy_echo "Installing Capistrano 2.15.5..."
+  gem install capistrano -v '2.15.5' --no-document
+
+fancy_echo "Installing Rake..."
+  gem install rake --no-document
+### end common-components/default-gems
+
+fancy_echo 'Installing dotfiles...'
+curl -Lo- http://bit.ly/1jDwRX3 | bash
+### end common-components/dotfiles
+
+fancy_echo "Installing archive formats..."
+sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+### end linux-common-components/archive-formats
+
+### end linux-common-componets/ubuntu-restricted-extras
+
+fancy_echo "Installing ubuntu software center..."
+sudo apt-get install -y software-center
+### end linux-common-components/software-center
+
+### end linux-common-components/synaptic
+
+fancy_echo "Installing ttf-ubuntu-font-family"
+sudo apt-get install -y ttf-ubuntu-font-family
+### end linux-common-components/ttf-ubuntu-font-family
+
+fancy_echo "Installing conky..."
+sudo apt-get -y install conky-all
+sudo apt-get -y install conky curl lm-sensors hddtemp
+### end linux-common-components/conky
+
+fancy_echo "Installing dragondisk..."
+sudo apt-get -y install libssl0.9.8
+wget http://download.dragondisk.com/dragondisk_1.0.5-0ubuntu_amd64.deb
+sudo apt-get -y install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
+sudo dpkg -i dragondisk_1.0.5-0ubuntu_amd64.deb
+rm dragondisk*.deb
+
+### end linux-common-components/dragondisk
+
+fancy_echo "Installing flash plugin..."
+sudo apt-get install -y flashplugin-installer
+### end linux-common-components/flash
+
+fancy_echo "Installing gimp..."
+sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
+### end linux-common-components/gimp
+
+fancy_echo "Installing git-gui..."
+sudo apt-get install -y git-gui
+### end linux-common-components/git-gui
+
+fancy_echo "Installing nixnote..."
+sudo add-apt-repository -y ppa:vincent-c/nevernote
+sudo apt-get update
+sudo apt-get install -y nixnote
+### end linux-common-components/nixnote
+
+fancy_echo "Installing pidgin..."
+sudo apt-get install -y pidgin
+### end linux-common-components/pidgin
+
+fancy_echo "Installing Skype..."
+sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo apt-get update
+sudo apt-get install -y skype
+### end linux-common-components/skype
+
+fancy_echo "Installing Spotify..."
+sudo chmod o+w /etc/apt/sources.list
+sudo echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
+sudo apt-get update
+sudo apt-get install -y spotify-client
+### end linux-common-components/spotify
+
+fancy_echo "Installing thunderbird..."
+sudo apt-get install -y thunderbird
+### end linux-common-components/thunderbird
+
+fancy_echo "Installing TLP..."
+sudo apt-get remove laptop-mode-tools
+sudo add-apt-repository -y ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install -y tlp
+sudo tlp start
+### end linux-common-components/tlp
+
+fancy_echo "Installing ubuntu tweak..."
+sudo add-apt-repository -y ppa:tualatrix/ppa
+sudo apt-get update
+sudo apt-get install -y ubuntu-tweak
+### end linux-common-components/ubuntu-tweak
+
+fancy_echo "Installing VLC..."
+sudo apt-get update
+sudo apt-get install -y vlc browser-plugin-vlc
+### end linux-common-components/vlc
+
+fancy_echo "Installing wallch..."
+sudo add-apt-repository -y ppa:wallch/version-3-ppa
+sudo apt-get update
+sudo apt-get install -y wallch
+### end linux-common-components/wallch
+
+fancy_echo "Symlink .ssh at Dropbox"
+ln -nfs ~/Dropbox/.ssh ~/.ssh
+chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
+chmod go-wr ~/.ssh/endpoint
+chmod go-wr ~/.ssh/id_dsa
+### end linux-common-components/symlink-dropbox-dot-ssh
+
+fancy_echo "Installing Dropbox CLI tools..."
+wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod 755 ~/bin/dropbox.py
+
+fancy_echo "Installing Dropbox to run on startup..."
+sudo wget -O /etc/init.d/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
+sudo chmod +x /etc/init.d/dropbox
+sudo update-rc.d dropbox defaults
+
+fancy_echo "Installing Dropbox..."
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+~/.dropbox-dist/dropboxd
+### end linux-common-components/dropbox
+
