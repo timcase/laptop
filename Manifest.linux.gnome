@@ -41,6 +41,7 @@ linux-common-components/tlp
 linux-common-components/f.lux
 linux-common-components/ubuntu-tweak
 linux-common-components/vlc
+linux-common-components/keepassx
 linux-gnome-components/wallch
 linux-common-components/symlink-dropbox-dot-ssh
 linux-common-components/dropbox

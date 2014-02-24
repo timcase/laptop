@@ -29,6 +29,7 @@ linux-common-components/software-center
 linux-common-components/synaptic
 linux-common-components/ttf-ubuntu-font-family
 linux-common-components/conky
+linux-common-components/keepassx
 linux-common-components/dragondisk
 linux-common-components/flash
 linux-common-components/gimp
