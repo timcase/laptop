@@ -22,6 +22,7 @@ common-components/ruby-environment
 linux-common-components/bundler
 common-components/default-gems
 common-components/dotfiles
+linux-common-components/terminator
 linux-common-components/software-center
 linux-common-components/synaptic
 linux-common-components/ubuntu-restricted-extras
