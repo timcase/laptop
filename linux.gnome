@@ -123,6 +123,8 @@ sudo apt-get update
 sudo apt-get install -y mosh
 ### end linux-common-components/mosh
 
+### end linux-common-componetns/redis
+
 fancy_echo "Installing firefox..."
 sudo apt-get install -y firefox
 ### end linux-common-components/firefox
@@ -183,6 +185,11 @@ fancy_echo "Installing Rake..."
 fancy_echo 'Installing dotfiles...'
 curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
+
+fancy_echo "Installing Terminator..."Terminator
+sudo apt-get upgrade
+sudo apt-get -y install terminator
+### end linux-common-components/terminator
 
 fancy_echo "Installing ubuntu software center..."
 sudo apt-get install -y software-center

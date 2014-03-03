@@ -9,6 +9,7 @@ linux-common-components/debian-derivative-packages
 linux-common-components/update-manager
 linux-common-components/silver-searcher-from-source
 linux-common-components/vera-bitstream-sans
+linux-common-components/redis
 
 linux-xfce-components/kupfer
 linux-xfce-components/leafpad

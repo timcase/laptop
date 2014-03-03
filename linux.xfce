@@ -101,6 +101,12 @@ fancy_echo "Install bitstream vera sans"
 sudo apt-get install -y ttf-bitstream-vera
 ### end linux-common-components/vera-bitstream-sans
 
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository -y ppa:rwky/redis
+sudo apt-get update
+sudo apt-get install -y redis-server
+### end linux-common-components/redis
+
 ### end 
 
 fancy_echo "Installing kupfer..."
@@ -213,6 +219,11 @@ sudo apt-get -y install conky curl lm-sensors hddtemp
 fancy_echo "Installing keepassx..."
 sudo apt-get install -y keepassx
 ### end linux-common-components/keepassx
+
+fancy_echo "Installing Terminator..."Terminator
+sudo apt-get upgrade
+sudo apt-get -y install terminator
+### end linux-common-components/terminator
 
 fancy_echo "Installing dragondisk..."
 sudo apt-get -y install libssl0.9.8
