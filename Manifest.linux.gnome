@@ -16,6 +16,7 @@ linux-gnome-components/gedit
 
 linux-common-components/mosh
 linux-common-componetns/redis
+linux-common-components/whois
 linux-common-components/firefox
 linux-gnome-components/chrome
 linux-common-components/rvm

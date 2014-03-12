@@ -10,6 +10,7 @@ linux-common-components/update-manager
 linux-common-components/silver-searcher-from-source
 linux-common-components/vera-bitstream-sans
 linux-common-components/redis
+linus-common-components/whois
 
 linux-xfce-components/kupfer
 linux-xfce-components/leafpad
