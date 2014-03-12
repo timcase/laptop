@@ -107,6 +107,8 @@ sudo apt-get update
 sudo apt-get install -y redis-server
 ### end linux-common-components/redis
 
+### end linus-common-components/whois
+
 ### end 
 
 fancy_echo "Installing kupfer..."
@@ -319,4 +321,7 @@ fancy_echo "Installing Dropbox..."
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
 ### end linux-common-components/dropbox
+
+sudo apt-get install -y xbacklight
+### end linux-common-components/xbacklight
 
