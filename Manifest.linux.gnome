@@ -9,6 +9,9 @@ linux-common-components/debian-derivative-packages
 linux-common-components/update-manager
 linux-common-components/silver-searcher-from-source
 linux-common-components/vera-bitstream-sans
+linux-common-components/ncurses-term
+linux-common-components/irrsi
+linux-common-components/dnsutils
 
 linux-gnome-components/gnome-terminal
 linux-gnome-components/gnome-do

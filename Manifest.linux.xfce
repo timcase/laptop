@@ -10,7 +10,10 @@ linux-common-components/update-manager
 linux-common-components/silver-searcher-from-source
 linux-common-components/vera-bitstream-sans
 linux-common-components/redis
-linus-common-components/whois
+linux-common-components/whois
+linux-common-components/ncurses-term
+linux-common-components/irrsi
+linux-common-components/dnsutils
 
 linux-xfce-components/kupfer
 linux-xfce-components/leafpad

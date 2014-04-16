@@ -1,0 +1,3 @@
+fancy_echo "Install ncurses-term for 256 terminal colors"
+
+sudo apt-get -y intall ncurses-term

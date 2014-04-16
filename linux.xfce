@@ -107,7 +107,21 @@ sudo apt-get update
 sudo apt-get install -y redis-server
 ### end linux-common-components/redis
 
-### end linus-common-components/whois
+fancy_echo "Installing whois..."
+sudo apt-get install -y whois
+### end linux-common-components/whois
+
+fancy_echo "Install ncurses-term for 256 terminal colors"
+
+sudo apt-get -y intall ncurses-term
+### end linux-common-components/ncurses-term
+
+### end linux-common-components/irrsi
+
+fancy_echo "Installing DNS utils"
+
+sudo apt-get -y install dnsutils
+### end linux-common-components/dnsutils
 
 ### end 
 
