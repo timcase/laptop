@@ -30,6 +30,7 @@ terminal and then click "Install".
 
 We support:
 
+* [14.04 LTS: Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes),
 * [13.10: Saucy Salamander](https://wiki.ubuntu.com/SaucySalamander/ReleaseNotes),
 * [13.04: Raring Ringtail](https://wiki.ubuntu.com/RaringRingtail/ReleaseNotes),
 * [12.10: Quantal Quetzal](https://wiki.ubuntu.com/QuantalQuetzal/ReleaseNotes), and
