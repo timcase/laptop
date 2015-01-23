@@ -113,7 +113,7 @@ sudo apt-get install -y whois
 
 fancy_echo "Install ncurses-term for 256 terminal colors"
 
-sudo apt-get -y intall ncurses-term
+sudo apt-get -y install ncurses-term
 ### end linux-common-components/ncurses-term
 
 ### end linux-common-components/irrsi
