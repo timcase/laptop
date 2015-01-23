@@ -315,13 +315,6 @@ sudo apt-get update
 sudo apt-get install -y vlc browser-plugin-vlc
 ### end linux-common-components/vlc
 
-fancy_echo "Symlink .ssh at Dropbox"
-ln -nfs ~/Dropbox/.ssh ~/.ssh
-chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
-chmod go-wr ~/.ssh/endpoint
-chmod go-wr ~/.ssh/id_dsa
-### end linux-common-components/symlink-dropbox-dot-ssh
-
 fancy_echo "Installing Dropbox CLI tools..."
 wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod 755 ~/bin/dropbox.py
@@ -335,6 +328,13 @@ fancy_echo "Installing Dropbox..."
 cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
 ### end linux-common-components/dropbox
+
+fancy_echo "Symlink .ssh at Dropbox"
+ln -nfs ~/Dropbox/.ssh ~/.ssh
+chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
+chmod go-wr ~/.ssh/endpoint
+chmod go-wr ~/.ssh/id_dsa
+### end linux-common-components/symlink-dropbox-dot-ssh
 
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight

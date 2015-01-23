@@ -46,6 +46,6 @@ linux-common-components/thunderbird
 linux-common-components/tlp
 linux-common-components/ubuntu-tweak
 linux-common-components/vlc
-linux-common-components/symlink-dropbox-dot-ssh
 linux-common-components/dropbox
+linux-common-components/symlink-dropbox-dot-ssh
 linux-common-components/xbacklight
