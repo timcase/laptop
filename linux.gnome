@@ -199,6 +199,9 @@ fancy_echo "Installing Rake..."
 ### end common-components/default-gems
 
 fancy_echo 'Installing dotfiles...'
+
+rm -rf ~/bin/dotfiles
+
 curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
 
