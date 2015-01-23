@@ -155,7 +155,7 @@ sudo apt-get install -y firefox
 ### end linux-common-components/firefox
 
 fancy_echo "Installing Google Chrome..."
-sudo apt-get install -y libxss1 xdg-utils libnss3 libnspr4
+sudo apt-get install -y libxss1 xdg-utils libnss3 libnspr4 libappindicator1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
