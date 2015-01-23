@@ -116,14 +116,15 @@ fancy_echo "Install ncurses-term for 256 terminal colors"
 sudo apt-get -y install ncurses-term
 ### end linux-common-components/ncurses-term
 
-### end linux-common-components/irrsi
+fancy_echo "Install irssi irc client..."
+
+sudo apt-get -y install irrsi
+### end linux-common-components/irssi
 
 fancy_echo "Installing DNS utils"
 
 sudo apt-get -y install dnsutils
 ### end linux-common-components/dnsutils
-
-### end 
 
 fancy_echo "Installing kupfer..."
 sudo apt-get install -y kupfer
@@ -141,8 +142,6 @@ fancy_echo "Installing xubuntu-icon-theme..."
 sudo apt-get install -y xubuntu-icon-theme
 
 ### end linux-xfce-components/xubuntu-icon-theme
-
-### end 
 
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:keithw/mosh
@@ -215,12 +214,16 @@ fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats
 
-### end linux-common-componets/ubuntu-restricted-extras
+fancy_echo "Installing ubuntu restricted extras..."
+sudo apt-get install -y ubuntu-restricted-extras
+### end linux-common-components/ubuntu-restricted-extras
 
 fancy_echo "Installing ubuntu software center..."
 sudo apt-get install -y software-center
 ### end linux-common-components/software-center
 
+fancy_echo "Installing synaptic..."
+sudo apt-get install -y synaptic
 ### end linux-common-components/synaptic
 
 fancy_echo "Installing ttf-ubuntu-font-family"
@@ -289,12 +292,6 @@ sudo apt-get install -y spotify-client
 fancy_echo "Installing thunderbird..."
 sudo apt-get install -y thunderbird
 ### end linux-common-components/thunderbird
-
-fancy_echo "Installing f.lux..."
-sudo apt-get-respository -y ppa:kilian/f.lux
-sudo apt-get update
-sudo apt-get install -y fluxgui
-### end linux-common-components/f.lux
 
 fancy_echo "Installing TLP..."
 sudo apt-get remove laptop-mode-tools

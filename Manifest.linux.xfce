@@ -12,14 +12,12 @@ linux-common-components/vera-bitstream-sans
 linux-common-components/redis
 linux-common-components/whois
 linux-common-components/ncurses-term
-linux-common-components/irrsi
+linux-common-components/irssi
 linux-common-components/dnsutils
-
 linux-xfce-components/kupfer
 linux-xfce-components/leafpad
 linux-xfce-components/xscreensaver
 linux-xfce-components/xubuntu-icon-theme
-
 linux-common-components/mosh
 linux-common-components/firefox
 linux-xfce-components/chrome
@@ -29,7 +27,7 @@ linux-common-components/bundler
 common-components/default-gems
 common-components/dotfiles
 linux-common-components/archive-formats
-linux-common-componets/ubuntu-restricted-extras
+linux-common-components/ubuntu-restricted-extras
 linux-common-components/software-center
 linux-common-components/synaptic
 linux-common-components/ttf-ubuntu-font-family
@@ -45,7 +43,6 @@ linux-common-components/pidgin
 linux-common-components/skype
 linux-common-components/spotify
 linux-common-components/thunderbird
-linux-common-components/f.lux
 linux-common-components/tlp
 linux-common-components/ubuntu-tweak
 linux-common-components/vlc
