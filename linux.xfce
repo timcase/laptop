@@ -118,7 +118,7 @@ sudo apt-get -y install ncurses-term
 
 fancy_echo "Install irssi irc client..."
 
-sudo apt-get -y install irrsi
+sudo apt-get -y install irssi
 ### end linux-common-components/irssi
 
 fancy_echo "Installing DNS utils"
