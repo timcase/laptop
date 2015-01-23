@@ -1,2 +1,5 @@
 fancy_echo 'Installing dotfiles...'
+
+rm -rf ~/bin/dotfiles
+
 curl -Lo- http://bit.ly/1jDwRX3 | bash
