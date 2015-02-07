@@ -78,6 +78,9 @@ fancy_echo "Installing curl ..."
 
 fancy_echo "Installing zsh ..."
   sudo aptitude install -y zsh
+
+fancy_echo "Installing libicu-dev ..."
+sudo apt-get install -y libicu-dev
 ### end linux-common-components/debian-derivative-packages
 
 fancy_echo "Install ubuntu update manager..."
@@ -153,6 +156,7 @@ rm google-chrome*.deb
 ### end linux-gnome-components/chrome
 
 fancy_echo "Installing RVM, to change ruby versions..."
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 
 \curl -sSL https://get.rvm.io | bash
 
