@@ -126,6 +126,10 @@ fancy_echo "Installing DNS utils"
 sudo apt-get -y install dnsutils
 ### end linux-common-components/dnsutils
 
+fancy_echo "Installing keychain..."
+sudo apt-get install -y keychain
+### end linux-common-components/keychain
+
 fancy_echo "Installing kupfer..."
 sudo apt-get install -y kupfer
 ### end linux-xfce-components/kupfer

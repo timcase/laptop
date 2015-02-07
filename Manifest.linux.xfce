@@ -14,6 +14,7 @@ linux-common-components/whois
 linux-common-components/ncurses-term
 linux-common-components/irssi
 linux-common-components/dnsutils
+linux-common-components/keychain
 linux-xfce-components/kupfer
 linux-xfce-components/leafpad
 linux-xfce-components/xscreensaver
