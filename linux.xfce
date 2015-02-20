@@ -334,3 +334,9 @@ sudo apt-get install -y vlc browser-plugin-vlc
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight
 
+### end linux-common-componets/hipchat
+
+### end linux-common-componets/dropbox
+
+### end linux-common-componets/dropbox-symlink-dot-ssh
+

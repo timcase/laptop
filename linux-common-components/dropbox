@@ -8,5 +8,5 @@ sudo chmod +x /etc/init.d/dropbox
 sudo update-rc.d dropbox defaults
 
 fancy_echo "Installing Dropbox..."
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
+wget --output-document dropbox_1.6.2_amd64.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_1.6.2_amd64.deb
+sudo dpkg -i dropbox_1.6.2_amd64.deb
