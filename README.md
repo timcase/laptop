@@ -51,7 +51,12 @@ Read, then run the script:
 
 Read, then run the script:
 
-    bash <(wget -qO- https://raw.github.com/timcase/laptop/master/linux)
+#### XFCE
+
+    bash <(wget -qO- https://raw.github.com/timcase/laptop/master/linux.xfce)
+
+#### Gnome
+    bash <(wget -qO- https://raw.github.com/timcase/laptop/master/linux.gnome)
 
 Credits
 -------
