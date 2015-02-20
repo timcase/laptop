@@ -159,7 +159,7 @@ sudo apt-get update
 sudo apt-get install -y mosh
 ### end linux-common-components/mosh
 
-fancy_echo "Installing Xclip
+fancy_echo "Installing Xclip"
 
 sudo apt-get -y install xclip
 ### end linux-common-components/xclip
