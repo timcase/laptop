@@ -331,27 +331,6 @@ sudo apt-get update
 sudo apt-get install -y vlc browser-plugin-vlc
 ### end linux-common-components/vlc
 
-fancy_echo "Installing Dropbox CLI tools..."
-wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
-chmod 755 ~/bin/dropbox.py
-
-fancy_echo "Installing Dropbox to run on startup..."
-sudo wget -O /etc/init.d/dropbox "https://gist.github.com/timcase/aeb93cf00e17bde3cf8a/raw/1a1e92b2031aea905f7b179157d66cd2a6a2414b/dropbox_init.d"
-sudo chmod +x /etc/init.d/dropbox
-sudo update-rc.d dropbox defaults
-
-fancy_echo "Installing Dropbox..."
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-~/.dropbox-dist/dropboxd
-### end linux-common-components/dropbox
-
-fancy_echo "Symlink .ssh at Dropbox"
-ln -nfs ~/Dropbox/.ssh ~/.ssh
-chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
-chmod go-wr ~/.ssh/endpoint
-chmod go-wr ~/.ssh/id_dsa
-### end linux-common-components/symlink-dropbox-dot-ssh
-
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight
 
