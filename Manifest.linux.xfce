@@ -10,6 +10,7 @@ linux-common-components/update-manager
 linux-common-components/silver-searcher-from-source
 linux-common-components/vera-bitstream-sans
 linux-common-components/redis
+linux-common-components/nodejs
 linux-common-components/whois
 linux-common-components/ncurses-term
 linux-common-components/irssi

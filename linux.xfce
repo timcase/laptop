@@ -113,6 +113,25 @@ sudo apt-get update
 sudo apt-get install -y redis-server
 ### end linux-common-components/redis
 
+fancy_echo "Installing Node JS..."
+sudo apt-get install -y nodejs
+
+fancy_echo "Symlink Node JS..."
+sudo ln -nfs /usr/bin/nodejs /usr/bin/node
+
+fancy_echo "Installing NPM..."
+sudo apt-get install -y npm
+
+fancy_echo "Install Yeoman..."
+sudo npm install -g yo
+
+fancy_echo "Installing Grunt CLI..."
+sudo npm install -g grunt-cli
+
+fancy_echo "Installing Bower..."
+sudo npm install -g bower
+### end linux-common-components/nodejs
+
 fancy_echo "Installing whois..."
 sudo apt-get install -y whois
 ### end linux-common-components/whois
