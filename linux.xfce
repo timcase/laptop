@@ -334,9 +334,26 @@ sudo apt-get install -y vlc browser-plugin-vlc
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight
 
-### end linux-common-componets/hipchat
+echo "deb http://downloads.hipchat.com/linux/apt stable main" > /tmp/atlassian-hipchat.list
+sudo cp /tmp/atlassian-hipchat.list /etc/apt/sources.list.d/
+wget -O - https://www.hipchat.com/keys/hipchat-linux.key | apt-key add -
+sudo apt-get -y update
+sudo apt-get install -y hipchat
+### end linux-common-components/hipchat
 
-### end linux-common-componets/dropbox
+fancy_echo "Symlink .ssh at Dropbox"
+ln -nfs ~/Dropbox/.ssh ~/.ssh
+chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
+chmod go-wr ~/.ssh/endpoint
+chmod go-wr ~/.ssh/id_dsa
+### end linux-common-components/dropbox-symlink-dot-ssh
 
-### end linux-common-componets/dropbox-symlink-dot-ssh
+fancy_echo "Installing Dropbox CLI tools..."
+wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
+chmod 755 ~/bin/dropbox.py
+~/bin/dropbox.py start -i
+
+fancy_echo "Installing Dropbox to run on startup..."
+~/bin/dropbox.py autostart y
+### end linux-common-components/dropbox
 
