@@ -49,5 +49,5 @@ linux-common-components/ubuntu-tweak
 linux-common-components/vlc
 linux-common-components/xbacklight
 linux-common-components/hipchat
-linux-common-components/dropbox-symlink-dot-ssh
 linux-common-components/dropbox
+linux-common-components/dropbox-symlink-dot-ssh

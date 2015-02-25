@@ -229,6 +229,8 @@ fancy_echo "Installing ubuntu restricted extras..."
 sudo apt-get install -y ubuntu-restricted-extras
 ### end linux-common-components/ubuntu-restricted-extras
 
+fancy_echo "Installing mscorefonts"
+echo ttf-mscorefonts-installer msttcorefonts/accpted-mscorefonts-eula select true | debconf-set-selections
 fancy_echo "Installing ttf-ubuntu-font-family"
 sudo apt-get install -y ttf-ubuntu-font-family
 ### end linux-common-components/ttf-ubuntu-font-family
