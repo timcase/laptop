@@ -329,7 +329,7 @@ sudo apt-get install -y xbacklight
 
 echo "deb http://downloads.hipchat.com/linux/apt stable main" > /tmp/atlassian-hipchat.list
 sudo cp /tmp/atlassian-hipchat.list /etc/apt/sources.list.d/
-wget -O - https://www.hipchat.com/keys/hipchat-linux.key | apt-key add -
+wget -qO - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
 sudo apt-get -y update
 sudo apt-get install -y hipchat
 ### end linux-common-components/hipchat
