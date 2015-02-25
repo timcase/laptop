@@ -222,13 +222,6 @@ fancy_echo "Installing Rake..."
   gem install rake --no-document
 ### end common-components/default-gems
 
-fancy_echo 'Installing dotfiles...'
-
-rm -rf ~/bin/dotfiles
-
-curl -Lo- http://bit.ly/1jDwRX3 | bash
-### end common-components/dotfiles
-
 fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats
