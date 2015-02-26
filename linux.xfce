@@ -335,6 +335,7 @@ sudo apt-get install -y hipchat
 ### end linux-common-components/hipchat
 
 fancy_echo "Installing Dropbox CLI tools..."
+mkdir -p ~/bin
 wget -O ~/bin/dropbox.py "http://www.dropbox.com/download?dl=packages/dropbox.py"
 chmod 755 ~/bin/dropbox.py
 ~/bin/dropbox.py start -i
