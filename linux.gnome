@@ -213,7 +213,7 @@ curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
 
 fancy_echo "Installing Terminator..."Terminator
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 sudo apt-get -y install terminator
 ### end linux-common-components/terminator
 

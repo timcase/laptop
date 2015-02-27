@@ -252,7 +252,7 @@ sudo apt-get install -y keepassx
 ### end linux-common-components/keepassx
 
 fancy_echo "Installing Terminator..."Terminator
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 sudo apt-get -y install terminator
 ### end linux-common-components/terminator
 
