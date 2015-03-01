@@ -144,15 +144,6 @@ fancy_echo "Installing leafpad..."
 sudo apt-get install -y leafpad
 ### end linux-xfce-components/leafpad
 
-fancy_echo "Removing xscreensaver..."
-sudo apt-get remove -y xscreensaver
-### end linux-xfce-components/xscreensaver
-
-fancy_echo "Installing xubuntu-icon-theme..."
-sudo apt-get install -y xubuntu-icon-theme
-
-### end linux-xfce-components/xubuntu-icon-theme
-
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:keithw/mosh
 sudo apt-get update
@@ -226,8 +217,17 @@ fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats
 
-fancy_echo "Installing ubuntu restricted extras..."
-sudo apt-get install -y ubuntu-restricted-extras
+fancy_echo "Installing ubuntu restricted addons..."
+sudo apt-get install -y ubuntu-restricted-addons
+
+fancy_echo "Installing gstreamer..."
+sudo apt-get install -y gstreamer0.10-plugins-bad-multiverse
+
+fancy_echo "Installing libav-tools..."
+sudo apt-get install -y libav-tools
+
+fancy_echo "Installing unrar..."
+sudo apt-get install -y unrar
 ### end linux-common-components/ubuntu-restricted-extras
 
 fancy_echo "Installing ubuntu software center..."
@@ -247,23 +247,10 @@ sudo apt-get -y install conky-all
 sudo apt-get -y install conky curl lm-sensors hddtemp
 ### end linux-common-components/conky
 
-fancy_echo "Installing keepassx..."
-sudo apt-get install -y keepassx
-### end linux-common-components/keepassx
-
 fancy_echo "Installing Terminator..."Terminator
 sudo apt-get -y upgrade
 sudo apt-get -y install terminator
 ### end linux-common-components/terminator
-
-fancy_echo "Installing dragondisk..."
-sudo apt-get -y install libssl0.9.8
-wget http://download.dragondisk.com/dragondisk_1.0.5-0ubuntu_amd64.deb
-sudo apt-get -y install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
-sudo dpkg -i dragondisk_1.0.5-0ubuntu_amd64.deb
-rm dragondisk*.deb
-
-### end linux-common-components/dragondisk
 
 fancy_echo "Installing flash plugin..."
 sudo apt-get install -y flashplugin-installer
