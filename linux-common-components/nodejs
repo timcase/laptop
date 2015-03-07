@@ -15,6 +15,3 @@ sudo npm install -g grunt-cli
 
 fancy_echo "Installing Bower..."
 sudo npm install -g bower
-
-fancy echo "Installing Autoprefixer core..."
-npm install autoprefixer-core
