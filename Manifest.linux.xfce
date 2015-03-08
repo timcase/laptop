@@ -21,6 +21,7 @@ linux-common-components/mosh
 linux-common-components/xclip
 linux-common-components/firefox
 linux-xfce-components/chrome
+linux-xfce-components/opera
 linux-common-components/rvm
 common-components/ruby-environment
 linux-common-components/bundler
@@ -46,4 +47,3 @@ linux-common-components/vlc
 linux-common-components/xbacklight
 linux-common-components/hipchat
 linux-common-components/dropbox
-linux-common-components/dropbox-symlink-dot-ssh

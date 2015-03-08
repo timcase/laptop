@@ -166,6 +166,8 @@ sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
 ### end linux-xfce-components/chrome
 
+### end linux-xfce-components/opera
+
 fancy_echo "Installing RVM, to change ruby versions..."
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 
@@ -330,11 +332,4 @@ chmod 755 ~/bin/dropbox.py
 fancy_echo "Installing Dropbox to run on startup..."
 ~/bin/dropbox.py autostart y
 ### end linux-common-components/dropbox
-
-fancy_echo "Symlink .ssh at Dropbox"
-ln -nfs ~/Dropbox/.ssh ~/.ssh
-chmod go-w ~ ~/.ssh ~/.ssh/authorized_keys
-chmod go-wr ~/.ssh/endpoint
-chmod go-wr ~/.ssh/id_dsa
-### end linux-common-components/dropbox-symlink-dot-ssh
 
