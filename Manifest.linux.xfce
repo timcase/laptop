@@ -30,6 +30,7 @@ linux-common-components/archive-formats
 linux-common-components/ubuntu-restricted-extras
 linux-common-components/software-center
 linux-common-components/synaptic
+linux-common-components/nodejs
 linux-common-components/ttf-ubuntu-font-family
 linux-common-components/conky
 linux-common-components/terminator
