@@ -291,6 +291,14 @@ sudo apt-get update
 sudo apt-get install -y nixnote
 ### end linux-common-components/nixnote
 
+fancy_echo "Installing wine..."
+sudo apt-get install -y wine
+### end linux-common-components/wine
+
+fancy_echo "Downloading 1password..."
+wget https://d13itkw33a7sus.cloudfront.net/dist/1P/win4/1Password-4.2.0.548.exe -P ~/Downloads
+### end linux-common-components/1password
+
 fancy_echo "Installing pidgin..."
 sudo apt-get install -y pidgin
 ### end linux-common-components/pidgin
@@ -351,4 +359,6 @@ chmod 755 ~/bin/dropbox.py
 fancy_echo "Installing Dropbox to run on startup..."
 ~/bin/dropbox.py autostart y
 ### end linux-common-components/dropbox
+
+### end 
 

@@ -38,6 +38,8 @@ linux-common-components/flash
 linux-common-components/gimp
 linux-common-components/git-gui
 linux-common-components/nixnote
+linux-common-components/wine
+linux-common-components/1password
 linux-common-components/pidgin
 linux-common-components/skype
 linux-common-components/spotify
@@ -48,3 +50,4 @@ linux-common-components/vlc
 linux-common-components/xbacklight
 linux-common-components/hipchat
 linux-common-components/dropbox
+
