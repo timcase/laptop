@@ -243,9 +243,6 @@ sudo apt-get install -y synaptic
 fancy_echo "Installing Node JS..."
 sudo apt-get install -y nodejs
 
-fancy_echo "Symlink Node JS..."
-sudo ln -nfs /usr/bin/nodejs /usr/bin/node
-
 fancy_echo "Installing NPM..."
 sudo apt-get install -y npm
 
@@ -359,6 +356,4 @@ chmod 755 ~/bin/dropbox.py
 fancy_echo "Installing Dropbox to run on startup..."
 ~/bin/dropbox.py autostart y
 ### end linux-common-components/dropbox
-
-### end 
 
