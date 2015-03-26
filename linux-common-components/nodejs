@@ -1,8 +1,9 @@
-fancy_echo "Installing Node JS..."
-sudo apt-get install -y nodejs
+fancy_echo "Installing Node JS and NPM..."
+sudo apt-get install -y python-software-properties python g++ make
+sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo apt-get -y update
+udo apt-get install -y nodejs
 
-fancy_echo "Installing NPM..."
-sudo apt-get install -y npm
 
 fancy_echo "Install Yeoman..."
 sudo npm install -g yo
