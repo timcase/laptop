@@ -21,12 +21,13 @@ linux-common-components/mosh
 linux-common-components/xclip
 linux-common-components/firefox
 linux-xfce-components/chrome
-linux-xfce-components/opera
+linux-common-components/opera
 linux-common-components/rvm
 common-components/ruby-environment
 linux-common-components/bundler
 common-components/default-gems
 linux-common-components/archive-formats
+linux-common-components/ttf-mscorefonts
 linux-common-components/ubuntu-restricted-extras
 linux-common-components/software-center
 linux-common-components/synaptic

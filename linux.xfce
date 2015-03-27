@@ -167,7 +167,12 @@ sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
 ### end linux-xfce-components/chrome
 
-### end linux-xfce-components/opera
+fancy_echo "Installing Opera..."
+sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
+sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -' 
+sudo apt-get -y update
+sudo apt-get -y install opera
+### end linux-common-components/opera
 
 fancy_echo "Installing RVM, to change ruby versions..."
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
@@ -219,6 +224,11 @@ fancy_echo "Installing Rake..."
 fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats
+
+fancy_echo "Installing ttf-mscorefonts..."
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+sudo apt-get -y install ttf-mscorefonts-installer
+### end linux-common-components/ttf-mscorefonts
 
 fancy_echo "Installing ubuntu restricted addons..."
 sudo apt-get install -y ubuntu-restricted-addons
