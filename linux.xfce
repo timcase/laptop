@@ -262,7 +262,7 @@ fancy_echo "Install Yeoman..."
 sudo npm install -g yo
 
 fancy_echo "Installing angular generator for yeoman..."
-npm install -g generator-angular
+sudo npm install -g generator-angular
 
 fancy_echo "Installing Grunt CLI..."
 sudo npm install -g grunt-cli
