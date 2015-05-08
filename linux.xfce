@@ -1,112 +1,58 @@
-#!/usr/bin/env bash
-### end common-components/bash-shebang
+### end j/* common-components/bash-shebang */
 
-# Welcome to the thoughtbot laptop script! Be prepared to turn your laptop (or
-# desktop, no haters here) into an awesome development machine.
+### end /* common-components/header */
 
-# This file is auto-generated. Do not edit it by hand unless you know what
-# you're doing. Please see 'CONTRIBUTING.md' for more information.
-### end common-components/header
+### end /* common-components/exit-trap */
 
-trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+### end /* common-components/check-home-bin */
 
-set -e
-### end common-components/exit-trap
+### end /* common-components/shared-functions */
 
-if [[ ! -d "$HOME/.bin/" ]]; then
-  mkdir "$HOME/.bin"
-fi
+### end /* linux-common-components/distro-check */
 
-if [ ! -f "$HOME/.zshrc" ]; then
-  touch $HOME/.zshrc
-fi
+### end /* linux-common-components/debian-package-update */
 
-if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
-  echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.zshrc
-  export PATH="$HOME/.bin:$PATH"
-fi
-### end common-components/check-home-bin
+### end /* linux-common-components/debian-derivative-packages */
 
-fancy_echo() {
-  printf "\n%b\n" "$1"
-}
-### end common-components/shared-functions
+### end /* linux-common-components/update-manager */
 
-if ! grep -qiE 'precise|quantal|wheezy|raring|jessie|saucy|trusty' /etc/os-release; then
-  fancy_echo "Sorry! we don't currently support that distro."
-  exit 1
-fi
-### end linux-common-components/distro-check
+### end /* linux-common-components/silver-searcher-from-source */
 
-fancy_echo "Updating system packages ..."
-  if command -v aptitude >/dev/null; then
-    fancy_echo "Using aptitude ..."
-  else
-    fancy_echo "Installing aptitude ..."
-    sudo apt-get install -y aptitude
-  fi
+### end /* linux-common-components/vera-bitstream-sans */
 
-  sudo aptitude update
-### end linux-common-components/debian-package-update
+### end /* linux-common-components/redis */
 
-fancy_echo "Installing git, for source control management ..."
-  sudo aptitude install -y git
+### end /* linux-common-components/whois */
 
-fancy_echo "Installing base ruby build dependencies ..."
-  sudo aptitude build-dep -y ruby1.9.3
+### end /* linux-common-components/ncurses-term */
 
-fancy_echo "Installing libraries for common gem dependencies ..."
-  sudo aptitude install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
+### end /* linux-common-components/irssi */
 
-fancy_echo "Installing Postgres, a good open source relational database ..."
-  sudo aptitude install -y postgresql postgresql-server-dev-all postgres-contrib-9.3
+### end /* linux-common-components/dnsutils */
 
-fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
-  sudo aptitude install -y exuberant-ctags
+### end /* linux-common-components/keychain */
 
-fancy_echo "Installing vim ..."
-  sudo aptitude install -y vim-gtk
+### end /* linux-xfce-components/kupfer */
 
-fancy_echo "Installing tmux, to save project state and switch between projects ..."
-  sudo aptitude install -y tmux
+### end /* linux-xfce-components/leafpad */
 
-fancy_echo "Installing ImageMagick, to crop and resize images ..."
-  sudo aptitude install -y imagemagick
+### end /* linux-xfce-components/xscreensaver */
 
-fancy_echo "Install ImageMagick dev tools..."
-sudo apt-get install -y libmagickcore-dev libmagickwand-dev
+### end /* linux-xfce-components/xubuntu-icon-theme */
 
-fancy_echo "Installing curl ..."
-  sudo aptitude install -y curl
+### end /* linux-common-components/mosh */
 
-fancy_echo "Installing zsh ..."
-  sudo aptitude install -y zsh
+### end /* linux-common-components/firefox */
 
-fancy_echo "Installing libicu-dev ..."
-sudo apt-get install -y libicu-dev
-### end linux-common-components/debian-derivative-packages
+### end /* linux-xfce-components/chrome */
 
-fancy_echo "Install ubuntu update manager..."
-sudo apt-get install -y update-manager
-### end linux-common-components/update-manager
+### end /* linux-common-components/rvm */
 
-if ! which ag &>/dev/null; then
-  fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
-    git clone git://github.com/ggreer/the_silver_searcher.git /tmp/the_silver_searcher
-    sudo aptitude install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
-    sh /tmp/the_silver_searcher/build.sh
-    cd /tmp/the_silver_searcher
-    sh build.sh
-    sudo make install
-    cd
-    rm -rf /tmp/the_silver_searcher
-fi
-### end linux-common-components/silver-searcher-from-source
+### end /* common-components/ruby-environment */
 
-fancy_echo "Install bitstream vera sans"
-sudo apt-get install -y ttf-bitstream-vera
-### end linux-common-components/vera-bitstream-sans
+### end /* linux-common-components/bundler */
 
+<<<<<<< HEAD
 sudo apt-get install -y python-software-properties
 sudo add-apt-repository -y ppa:rwky/redis
 sudo apt-get update
@@ -176,50 +122,37 @@ sudo apt-get -y install opera
 
 fancy_echo "Installing RVM, to change ruby versions..."
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+=======
+### end /* common-components/default-gems */
+>>>>>>> fuck spotify
 
-\curl -sSL https://get.rvm.io | bash
+### end /* common-components/dotfiles */
 
-fancy_echo "Adding progress bar to rvm..."
+### end /* linux-common-components/archive-formats */
 
-echo progress-bar >> ~/.curlrc
+### end /* linux-common-components/ubuntu-restricted-extras */
 
-fancy_echo "Source rvm..."
-source ~/.rvm/scripts/rvm
-### end linux-common-components/rvm
+### end /* linux-common-components/software-center */
 
-RUBY_VERSION="2.1.0"
+### end /* linux-common-components/synaptic */
 
-fancy_echo "Installing Ruby $RUBY_VERSION ..."
-  rvm install $RUBY_VERSION
+### end /* linux-common-components/ttf-ubuntu-font-family */
 
-fancy_echo "Setting $RUBY_VERSION as global default Ruby ..."
-  rvm --default use $RUBY_VERSION
+### end /* linux-common-components/conky */
 
-fancy_echo "Updating to latest Rubygems version ..."
-  gem update --system
+### end /* linux-common-components/keepassx */
 
-fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
-  gem install bundler --no-document --pre
+### end /* linux-common-components/terminator */
 
-fancy_echo "Installing GitHub CLI client ..."
-  curl http://hub.github.com/standalone -sLo ~/.bin/hub
-  chmod +x ~/.bin/hub
-### end common-components/ruby-environment
+### end /* linux-common-components/dragondisk */
 
-fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
-  number_of_cores=$(nproc)
-  bundle config --global jobs $((number_of_cores - 1))
-### end linux-common-components/bundler
+### end /* linux-common-components/flash */
 
-fancy_echo "Installing IRB tools ..."
-  gem install irbtools --no-document
+### end /* linux-common-components/gimp */
 
-fancy_echo "Installing Capistrano 2.15.5..."
-  gem install capistrano -v '2.15.5' --no-document
+### end /* linux-common-components/git-gui */
 
-fancy_echo "Installing Rake..."
-  gem install rake --no-document
-### end common-components/default-gems
+### end /* linux-common-components/nixnote */
 
 fancy_echo "Installing archive formats..."
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
