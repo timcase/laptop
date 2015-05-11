@@ -1,125 +1,301 @@
-### end /* common-components/bash-shebang */
+#!/usr/bin/env bash
+### end common-components/bash-shebang
 
-### end /* common-components/header */
+# Welcome to the thoughtbot laptop script! Be prepared to turn your laptop (or
+# desktop, no haters here) into an awesome development machine.
 
-### end /* common-components/exit-trap */
+# This file is auto-generated. Do not edit it by hand unless you know what
+# you're doing. Please see 'CONTRIBUTING.md' for more information.
+### end common-components/header
 
-### end /* common-components/check-home-bin */
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
-### end /* common-components/shared-functions */
+set -e
+### end common-components/exit-trap
 
-### end /* linux-common-components/distro-check */
+if [[ ! -d "$HOME/.bin/" ]]; then
+  mkdir "$HOME/.bin"
+fi
 
-### end /* linux-common-components/debian-package-update */
+if [ ! -f "$HOME/.zshrc" ]; then
+  touch $HOME/.zshrc
+fi
 
-### end /* linux-common-components/debian-derivative-packages */
+if [[ ":$PATH:" != *":$HOME/.bin:"* ]]; then
+  echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.zshrc
+  export PATH="$HOME/.bin:$PATH"
+fi
+### end common-components/check-home-bin
 
-### end /* linux-common-components/update-manager */
+fancy_echo() {
+  printf "\n%b\n" "$1"
+}
+### end common-components/shared-functions
 
-### end /* linux-common-components/silver-searcher-from-source */
+if ! grep -qiE 'precise|quantal|wheezy|raring|jessie|saucy|trusty' /etc/os-release; then
+  fancy_echo "Sorry! we don't currently support that distro."
+  exit 1
+fi
+### end linux-common-components/distro-check
 
-### end /* linux-common-components/vera-bitstream-sans */
+fancy_echo "Updating system packages ..."
 
-### end /* linux-common-components/redis */
+sudo add-apt-repository -y ppa:rwky/redis
+sudo add-apt-repository -y ppa:keithw/mosh
+sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo add-apt-repository -y ppa:vincent-c/nevernote
 
-### end /* linux-common-components/whois */
+sudo apt-get -y update
+### end linux-common-components/debian-package-update
 
-### end /* linux-common-components/ncurses-term */
+fancy_echo "Installing git, for source control management ..."
+  sudo aptitude install -y git
 
-### end /* linux-common-components/irssi */
+fancy_echo "Installing base ruby build dependencies ..."
+  sudo aptitude build-dep -y ruby1.9.3
 
-### end /* linux-common-components/dnsutils */
+fancy_echo "Installing libraries for common gem dependencies ..."
+  sudo aptitude install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
 
-### end /* linux-common-components/keychain */
+fancy_echo "Installing Postgres, a good open source relational database ..."
+  sudo aptitude install -y postgresql postgresql-server-dev-all postgres-contrib-9.3
 
-### end /* linux-xfce-components/kupfer */
+fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
+  sudo aptitude install -y exuberant-ctags
 
-### end /* linux-xfce-components/leafpad */
+fancy_echo "Installing vim ..."
+  sudo aptitude install -y vim-gtk
 
-### end /* linux-xfce-components/xscreensaver */
+fancy_echo "Installing tmux, to save project state and switch between projects ..."
+  sudo aptitude install -y tmux
 
-### end /* linux-xfce-components/xubuntu-icon-theme */
+fancy_echo "Installing ImageMagick, to crop and resize images ..."
+  sudo aptitude install -y imagemagick
 
-### end /* linux-common-components/mosh */
+fancy_echo "Install ImageMagick dev tools..."
+sudo apt-get install -y libmagickcore-dev libmagickwand-dev
 
-### end /* linux-common-components/firefox */
+fancy_echo "Installing curl ..."
+  sudo aptitude install -y curl
 
-### end /* linux-xfce-components/chrome */
+fancy_echo "Installing zsh ..."
+  sudo aptitude install -y zsh
 
-### end /* linux-common-components/rvm */
+fancy_echo "Installing libicu-dev ..."
+sudo apt-get install -y libicu-dev
+### end linux-common-components/debian-derivative-packages
 
-### end /* common-components/ruby-environment */
+fancy_echo "Install ubuntu update manager..."
+sudo apt-get install -y update-manager
+### end linux-common-components/update-manager
 
-### end /* linux-common-components/bundler */
+if ! which ag &>/dev/null; then
+  fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
+    git clone git://github.com/ggreer/the_silver_searcher.git /tmp/the_silver_searcher
+    sudo aptitude install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
+    sh /tmp/the_silver_searcher/build.sh
+    cd /tmp/the_silver_searcher
+    sh build.sh
+    sudo make install
+    cd
+    rm -rf /tmp/the_silver_searcher
+fi
+### end linux-common-components/silver-searcher-from-source
 
-### end /* common-components/default-gems */
+fancy_echo "Install bitstream vera sans"
+sudo apt-get install -y ttf-bitstream-vera
+### end linux-common-components/vera-bitstream-sans
 
-### end /* common-components/dotfiles */
+sudo apt-get install -y python-software-properties
+#sudo add-apt-repository -y ppa:rwky/redis 
+#sudo apt-get update 
+sudo apt-get install -y redis-server
+### end linux-common-components/redis
 
-### end /* linux-common-components/archive-formats */
+fancy_echo "Installing whois..."
+sudo apt-get install -y whois
+### end linux-common-components/whois
 
-### end /* linux-common-components/ubuntu-restricted-extras */
+fancy_echo "Install ncurses-term for 256 terminal colors"
 
-### end /* linux-common-components/software-center */
+sudo apt-get -y install ncurses-term
+### end linux-common-components/ncurses-term
 
-### end /* linux-common-components/synaptic */
+fancy_echo "Install irssi irc client..."
 
-### end /* linux-common-components/ttf-ubuntu-font-family */
+sudo apt-get -y install irssi
+### end linux-common-components/irssi
 
-### end /* linux-common-components/conky */
+fancy_echo "Installing DNS utils"
 
-### end /* linux-common-components/keepassx */
+sudo apt-get -y install dnsutils
+### end linux-common-components/dnsutils
 
-### end /* linux-common-components/terminator */
+fancy_echo "Installing keychain..."
+sudo apt-get install -y keychain
+### end linux-common-components/keychain
 
-### end /* linux-common-components/dragondisk */
+fancy_echo "Installing kupfer..."
+sudo apt-get install -y kupfer
+### end linux-xfce-components/kupfer
 
-### end /* linux-common-components/flash */
+fancy_echo "Installing leafpad..."
+sudo apt-get install -y leafpad
+### end linux-xfce-components/leafpad
 
-### end /* linux-common-components/gimp */
+fancy_echo "Installing xubuntu-icon-theme..."
+sudo apt-get install -y xubuntu-icon-theme
 
-### end /* linux-common-components/git-gui */
+### end linux-xfce-components/xubuntu-icon-theme
 
-### end /* linux-common-components/nixnote */
+sudo apt-get install -y python-software-properties
+#sudo add-apt-repository -y ppa:keithw/mosh
+#sudo apt-get update
+sudo apt-get install -y mosh
+### end linux-common-components/mosh
 
-### end /* linux-common-components/pidgin */
+fancy_echo "Installing firefox..."
+sudo apt-get install -y firefox
+### end linux-common-components/firefox
 
-### end /* linux-common-components/skype */
+fancy_echo "Installing Google Chrome..."
+cd ~
+sudo apt-get install -y libxss1 xdg-utils libnss3 libnspr4 libappindicator1
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome*.deb
+rm google-chrome*.deb
+### end linux-xfce-components/chrome
 
-### end /* linux-common-components/spotify */
+fancy_echo "Installing RVM, to change ruby versions..."
+gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+
+\curl -sSL https://get.rvm.io | bash
+
+fancy_echo "Adding progress bar to rvm..."
+
+echo progress-bar >> ~/.curlrc
+
+fancy_echo "Source rvm..."
+source ~/.rvm/scripts/rvm
+### end linux-common-components/rvm
+
+RUBY_VERSION="2.1.0"
+
+fancy_echo "Installing Ruby $RUBY_VERSION ..."
+  rvm install $RUBY_VERSION
+
+fancy_echo "Setting $RUBY_VERSION as global default Ruby ..."
+  rvm --default use $RUBY_VERSION
+
+fancy_echo "Updating to latest Rubygems version ..."
+  gem update --system
+
+fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
+  gem install bundler --no-document --pre
+
+fancy_echo "Installing GitHub CLI client ..."
+  curl http://hub.github.com/standalone -sLo ~/.bin/hub
+  chmod +x ~/.bin/hub
+### end common-components/ruby-environment
+
+fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
+  number_of_cores=$(nproc)
+  bundle config --global jobs $((number_of_cores - 1))
+### end linux-common-components/bundler
+
+fancy_echo "Installing IRB tools ..."
+  gem install irbtools --no-document
+
+fancy_echo "Installing Capistrano 2.15.5..."
+  gem install capistrano -v '2.15.5' --no-document
+
+fancy_echo "Installing Rake..."
+  gem install rake --no-document
+### end common-components/default-gems
+
+fancy_echo 'Installing dotfiles...'
+
+rm -rf ~/bin/dotfiles
+
+curl -Lo- http://bit.ly/1jDwRX3 | bash
+### end common-components/dotfiles
+
+fancy_echo "Installing archive formats..."
+sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+### end linux-common-components/archive-formats
+
+fancy_echo "Installing ubuntu restricted addons..."
+sudo apt-get install -y ubuntu-restricted-addons
+
+fancy_echo "Installing gstreamer..."
+sudo apt-get install -y gstreamer0.10-plugins-bad-multiverse
+
+fancy_echo "Installing libav-tools..."
+sudo apt-get install -y libav-tools
+
+fancy_echo "Installing unrar..."
+sudo apt-get install -y unrar
+### end linux-common-components/ubuntu-restricted-extras
+
+fancy_echo "Installing ubuntu software center..."
+sudo apt-get install -y software-center
+### end linux-common-components/software-center
+
+fancy_echo "Installing synaptic..."
+sudo apt-get install -y synaptic
+### end linux-common-components/synaptic
+
+fancy_echo "Installing ttf-ubuntu-font-family"
+sudo apt-get install -y ttf-ubuntu-font-family
+### end linux-common-components/ttf-ubuntu-font-family
+
+fancy_echo "Installing conky..."
+sudo apt-get -y install conky-all
+sudo apt-get -y install conky curl lm-sensors hddtemp
+### end linux-common-components/conky
+
+fancy_echo "Installing Terminator..."Terminator
+sudo apt-get -y install terminator
+### end linux-common-components/terminator
+
+fancy_echo "Installing flash plugin..."
+sudo apt-get install -y flashplugin-installer
+### end linux-common-components/flash
+
+fancy_echo "Installing gimp..."
+sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
+### end linux-common-components/gimp
+
+fancy_echo "Installing git-gui..."
+sudo apt-get install -y git-gui
+### end linux-common-components/git-gui
+
+fancy_echo "Installing nixnote..."
+#sudo add-apt-repository -y ppa:vincent-c/nevernote
+#sudo apt-get update
+sudo apt-get install -y nixnote
+### end linux-common-components/nixnote
+
+fancy_echo "Installing pidgin..."
+sudo apt-get install -y pidgin
+### end linux-common-components/pidgin
+
+fancy_echo "Installing Skype..."
+#sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+#sudo apt-get update
+sudo apt-get install -y skype
+### end linux-common-components/skype
 
 fancy_echo "Installing thunderbird..."
 sudo apt-get install -y thunderbird
 ### end linux-common-components/thunderbird
 
-fancy_echo "Installing TLP..."
-sudo apt-get remove laptop-mode-tools
-sudo add-apt-repository -y ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install -y tlp
-sudo tlp start
-### end linux-common-components/tlp
-
-fancy_echo "Installing ubuntu tweak..."
-sudo add-apt-repository -y ppa:tualatrix/ppa
-sudo apt-get update
-sudo apt-get install -y ubuntu-tweak
-### end linux-common-components/ubuntu-tweak
-
 fancy_echo "Installing VLC..."
-sudo apt-get update
 sudo apt-get install -y vlc browser-plugin-vlc
 ### end linux-common-components/vlc
 
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight
-
-echo "deb http://downloads.hipchat.com/linux/apt stable main" > /tmp/atlassian-hipchat.list
-sudo cp /tmp/atlassian-hipchat.list /etc/apt/sources.list.d/
-wget -qO - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
-sudo apt-get -y update
-sudo apt-get install -y hipchat
-### end linux-common-components/hipchat
 
 #fancy_echo "Installing Dropbox CLI tools..."
 #mkdir -p ~/bin
@@ -133,9 +309,9 @@ sudo apt-get install -y hipchat
 fancy_echo "Installing Dropbox..."
 sudo apt-get -y install nautilus-dropbox
 
-fancy_echo "Installing Thunar integration for Dropbox..."
-sudo add-apt-repository -y ppa:xubuntu-dev/extras
-sudo apt-get -y update 
-sudo apt-get -y install thunar-dropbox-plugin
+# fancy_echo "Installing Thunar integration for Dropbox..."
+# sudo add-apt-repository -y ppa:xubuntu-dev/extras
+# sudo apt-get -y update 
+# sudo apt-get -y install thunar-dropbox-plugin
 ### end linux-common-components/dropbox
 

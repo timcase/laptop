@@ -1,9 +1,8 @@
 fancy_echo "Updating system packages ..."
-  if command -v aptitude >/dev/null; then
-    fancy_echo "Using aptitude ..."
-  else
-    fancy_echo "Installing aptitude ..."
-    sudo apt-get install -y aptitude
-  fi
 
-  sudo aptitude update
+sudo add-apt-repository -y ppa:rwky/redis
+sudo add-apt-repository -y ppa:keithw/mosh
+sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+sudo add-apt-repository -y ppa:vincent-c/nevernote
+
+sudo apt-get -y update

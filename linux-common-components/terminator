@@ -1,3 +1,2 @@
 fancy_echo "Installing Terminator..."Terminator
-sudo apt-get -y upgrade
 sudo apt-get -y install terminator

@@ -1,3 +1,2 @@
 fancy_echo "Installing VLC..."
-sudo apt-get update
 sudo apt-get install -y vlc browser-plugin-vlc
