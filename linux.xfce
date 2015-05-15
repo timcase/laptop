@@ -53,6 +53,8 @@ sudo add-apt-repository -y ppa:rwky/redis
 sudo add-apt-repository -y ppa:keithw/mosh
 sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 sudo add-apt-repository -y ppa:vincent-c/nevernote
+sudo apt-get install -y python-software-properties python g++ make
+sudo add-apt-repository -y ppa:chris-lea/node.js
 
 sudo apt-get -y update
 ### end linux-common-components/debian-package-update
@@ -67,7 +69,7 @@ fancy_echo "Installing libraries for common gem dependencies ..."
   sudo aptitude install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
 
 fancy_echo "Installing Postgres, a good open source relational database ..."
-  sudo aptitude install -y postgresql postgresql-server-dev-all postgres-contrib-9.3
+  sudo aptitude install -y postgresql postgresql-server-dev-all postgresql-contrib-9.3
 
 fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
   sudo aptitude install -y exuberant-ctags
@@ -258,6 +260,26 @@ fancy_echo "Installing ttf-ubuntu-font-family"
 sudo apt-get install -y ttf-ubuntu-font-family
 ### end linux-common-components/ttf-ubuntu-font-family
 
+fancy_echo "Installing Node JS and NPM..."
+#sudo apt-get install -y python-software-properties python g++ make
+#sudo add-apt-repository -y ppa:chris-lea/node.js
+#sudo apt-get -y update
+sudo apt-get install -y nodejs
+
+
+fancy_echo "Install Yeoman..."
+sudo npm install -g yo
+
+fancy_echo "Installing angular generator for yeoman..."
+sudo npm install -g generator-angular
+
+fancy_echo "Installing Grunt CLI..."
+sudo npm install -g grunt-cli
+
+fancy_echo "Installing Bower..."
+sudo npm install -g bower
+### end linux-common-components/nodejs
+
 fancy_echo "Installing conky..."
 sudo apt-get -y install conky-all
 sudo apt-get -y install conky curl lm-sensors hddtemp
@@ -303,8 +325,17 @@ fancy_echo "Installing VLC..."
 sudo apt-get install -y vlc browser-plugin-vlc
 ### end linux-common-components/vlc
 
+fancy_echo "Installing Xclip"
+
+sudo apt-get -y install xclip
+### end linux-common-components/xclip
+
 sudo apt-get install -y xbacklight
 ### end linux-common-components/xbacklight
+
+fancy_echo "Installing wine..."
+sudo apt-get install -y wine
+### end linux-common-components/wine
 
 #fancy_echo "Installing Dropbox CLI tools..."
 #mkdir -p ~/bin

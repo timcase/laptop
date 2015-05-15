@@ -8,7 +8,7 @@ fancy_echo "Installing libraries for common gem dependencies ..."
   sudo aptitude install -y libxslt1-dev libcurl4-openssl-dev libksba8 libksba-dev libqtwebkit-dev libreadline-dev
 
 fancy_echo "Installing Postgres, a good open source relational database ..."
-  sudo aptitude install -y postgresql postgresql-server-dev-all postgres-contrib-9.3
+  sudo aptitude install -y postgresql postgresql-server-dev-all postgresql-contrib-9.3
 
 fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
   sudo aptitude install -y exuberant-ctags

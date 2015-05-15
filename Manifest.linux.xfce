@@ -42,6 +42,7 @@ linux-common-components/pidgin
 linux-common-components/skype
 linux-common-components/thunderbird
 linux-common-components/vlc
+linux-common-components/xclip
 linux-common-components/xbacklight
 linux-common-components/wine
 linux-common-components/dropbox
