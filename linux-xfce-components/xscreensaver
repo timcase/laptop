@@ -1,2 +1,2 @@
 fancy_echo "Removing xscreensaver..."
-sudo apt-get remove -y xscreensaver
+sudo apt-fast remove -y xscreensaver

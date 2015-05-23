@@ -1,2 +1,2 @@
 fancy_echo "Installing kupfer..."
-sudo apt-get install -y kupfer
+sudo apt-fast install -y kupfer

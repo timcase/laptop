@@ -43,7 +43,7 @@ fancy_echo "Updating system packages ..."
     fancy_echo "Using aptitude ..."
   else
     fancy_echo "Installing aptitude ..."
-    sudo apt-get install -y aptitude
+    sudo apt-fast install -y aptitude
   fi
 
   sudo aptitude update
@@ -81,7 +81,7 @@ fancy_echo "Installing zsh ..."
 ### end linux-components/debian-derivative-packages
 
 fancy_echo "Install ubuntu update manager..."
-sudo apt-get install -y update-manager
+sudo apt-fast install -y update-manager
 ### end linux-components/update-manager
 
 if ! which ag &>/dev/null; then
@@ -98,27 +98,27 @@ fi
 ### end linux-components/silver-searcher-from-source
 
 fancy_echo "Install bitstream vera sans"
-sudo apt-get install -y ttf-bitstream-vera
+sudo apt-fast install -y ttf-bitstream-vera
 ### end linux-components/vera-bitstream-sans
 
 fancy_echo "Installing gnome-terminal..."
-sudo apt-get -y install gnome-terminal
+sudo apt-fast -y install gnome-terminal
 ### end linux-components/gnome-terminal
 
 ### end linux-components/gnome-do
 
-sudo apt-get install -y python-software-properties
+sudo apt-fast install -y python-software-properties
 sudo add-apt-repository -y ppa:keithw/mosh
-sudo apt-get update
-sudo apt-get install -y mosh
+sudo apt-fast update
+sudo apt-fast install -y mosh
 ### end linux-components/mosh
 
 fancy_echo "Installing firefox..."
-sudo apt-get install -y firefox
+sudo apt-fast install -y firefox
 ### end linux-components/firefox
 
 fancy_echo "Installing Google Chrome..."
-sudo apt-get install -y libxss1 xdg-utils
+sudo apt-fast install -y libxss1 xdg-utils
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
@@ -175,96 +175,96 @@ curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
 
 fancy_echo "Installing archive formats..."
-sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-fast install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-components/archive-formats
 
 fancy_echo "Installing conky..."
-sudo apt-get -y install conky-all
-sudo apt-get -y install conky curl lm-sensors hddtemp
+sudo apt-fast -y install conky-all
+sudo apt-fast -y install conky curl lm-sensors hddtemp
 ### end linux-components/conky
 
 fancy_echo "Installing dragondisk..."
-sudo apt-get -y install libssl0.9.8
+sudo apt-fast -y install libssl0.9.8
 wget http://download.dragondisk.com/dragondisk_1.0.5-0ubuntu_amd64.deb
-sudo apt-get -y install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
+sudo apt-fast -y install libqt4-dbus libqt4-network libqt4-xml libqtcore4 libqtgui4
 sudo dpkg -i dragondisk_1.0.5-0ubuntu_amd64.deb
 rm dragondisk*.deb
 
 ### end linux-components/dragondisk
 
 fancy_echo "Installing flash plugin..."
-sudo apt-get install -y flashplugin-installer
+sudo apt-fast install -y flashplugin-installer
 ### end linux-components/flash
 
 fancy_echo "Installing gedit..."
-sudo apt-get -y install gedit
+sudo apt-fast -y install gedit
 ### end linux-components/gedit
 
 fancy_echo "Installing gimp..."
-sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
+sudo apt-fast install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
 ### end linux-components/gimp
 
 fancy_echo "Installing git-gui..."
-sudo apt-get install -y git-gui
+sudo apt-fast install -y git-gui
 ### end linux-components/git-gui
 
 fancy_echo "Installing mupdf..."
 sudo add-apt-repository -y ppa:guilhem-fr/mupdf
-sudo apt-get update
-sudo apt-get install -y --force-yes mupdf
+sudo apt-fast update
+sudo apt-fast install -y --force-yes mupdf
 ### end linux-components/mupdf
 
 fancy_echo "Installing nixnote..."
 sudo add-apt-repository -y ppa:vincent-c/nevernote
-sudo apt-get update
-sudo apt-get install -y nixnote
+sudo apt-fast update
+sudo apt-fast install -y nixnote
 ### end linux-components/nixnote
 
 fancy_echo "Installing pidgin..."
-sudo apt-get install -y pidgin
+sudo apt-fast install -y pidgin
 ### end linux-components/pidgin
 
 fancy_echo "Installing Skype..."
 sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-sudo apt-get update
-sudo apt-get install -y skype
+sudo apt-fast update
+sudo apt-fast install -y skype
 ### end linux-components/skype
 
 fancy_echo "Installing Spotify..."
 sudo chmod o+w /etc/apt/sources.list
 sudo echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
-sudo apt-get update
-sudo apt-get install -y spotify-client
+sudo apt-fast update
+sudo apt-fast install -y spotify-client
 ### end linux-components/spotify
 
 fancy_echo "Installing thunderbird..."
-sudo apt-get install -y thunderbird
+sudo apt-fast install -y thunderbird
 ### end linux-components/thunderbird
 
 fancy_echo "Installing TLP..."
-sudo apt-get remove laptop-mode-tools
+sudo apt-fast remove laptop-mode-tools
 sudo add-apt-repository -y ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install -y tlp
+sudo apt-fast update
+sudo apt-fast install -y tlp
 sudo tlp start
 ### end linux-components/tlp
 
 fancy_echo "Installing ubuntu tweak..."
 sudo add-apt-repository -y ppa:tualatrix/ppa
-sudo apt-get update
-sudo apt-get install -y ubuntu-tweak
+sudo apt-fast update
+sudo apt-fast install -y ubuntu-tweak
 ### end linux-components/ubuntu-tweak
 
 fancy_echo "Installing VLC..."
-sudo apt-get update
-sudo apt-get install -y vlc browser-plugin-vlc
+sudo apt-fast update
+sudo apt-fast install -y vlc browser-plugin-vlc
 ### end linux-components/vlc
 
 fancy_echo "Installing wallch..."
 sudo add-apt-repository -y ppa:wallch/version-3-ppa
-sudo apt-get update
-sudo apt-get install -y wallch
+sudo apt-fast update
+sudo apt-fast install -y wallch
 ### end linux-components/wallch
 
 fancy_echo "Symlink .ssh at Dropbox"

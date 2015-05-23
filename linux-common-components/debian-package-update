@@ -7,7 +7,7 @@ else
   sudo apt-get install -y aptitude
 fi
 
-sudo apt-get install -y software-properties-common python-software-properties
+sudo apt-fast install -y software-properties-common python-software-properties
 
 sudo add-apt-repository -y ppa:rwky/redis
 sudo add-apt-repository -y ppa:keithw/mosh
@@ -15,5 +15,8 @@ sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc)
 sudo add-apt-repository -y ppa:vincent-c/nevernote
 sudo apt-get install -y python-software-properties python g++ make
 sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo add-apt-repository ppa:saiarcot895/myppa
 
 sudo apt-get -y update
+
+sudo apt-get -y install apt-fast

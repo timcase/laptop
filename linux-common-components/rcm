@@ -1,4 +1,4 @@
 fancy_echo "Installing rcm, to manage your dotfiles ..."
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
-sudo apt-get update
-sudo apt-get install rcm
+sudo apt-fast update
+sudo apt-fast install rcm

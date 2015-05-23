@@ -3,5 +3,5 @@ sudo chmod o+w /etc/apt/sources.list
 sudo echo "deb http://repository.spotify.com stable non-free" >> /etc/apt/sources.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59
 sudo rm -fR /var/lib/apt/lists/*
-sudo apt-get update
-sudo apt-get install -y spotify-client
+sudo apt-fast update
+sudo apt-fast install -y spotify-client

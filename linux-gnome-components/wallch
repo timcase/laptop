@@ -1,4 +1,4 @@
 fancy_echo "Installing wallch..."
 sudo add-apt-repository -y ppa:wallch/version-3-ppa
-sudo apt-get update
-sudo apt-get install -y wallch
+sudo apt-fast update
+sudo apt-fast install -y wallch

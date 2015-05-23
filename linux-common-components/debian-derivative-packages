@@ -23,7 +23,7 @@ fancy_echo "Installing ImageMagick, to crop and resize images ..."
   sudo aptitude install -y imagemagick
 
 fancy_echo "Install ImageMagick dev tools..."
-sudo apt-get install -y libmagickcore-dev libmagickwand-dev
+sudo apt-fast install -y libmagickcore-dev libmagickwand-dev
 
 fancy_echo "Installing curl ..."
   sudo aptitude install -y curl
@@ -32,4 +32,4 @@ fancy_echo "Installing zsh ..."
   sudo aptitude install -y zsh
 
 fancy_echo "Installing libicu-dev ..."
-sudo apt-get install -y libicu-dev
+sudo apt-fast install -y libicu-dev

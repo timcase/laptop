@@ -1,2 +1,2 @@
 fancy_echo "Installing keychain..."
-sudo apt-get install -y keychain
+sudo apt-fast install -y keychain

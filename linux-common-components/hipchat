@@ -2,4 +2,4 @@ echo "deb http://downloads.hipchat.com/linux/apt stable main" > /tmp/atlassian-h
 sudo cp /tmp/atlassian-hipchat.list /etc/apt/sources.list.d/
 wget -qO - https://www.hipchat.com/keys/hipchat-linux.key | sudo apt-key add -
 sudo apt-get -y update
-sudo apt-get install -y hipchat
+sudo apt-fast install -y hipchat

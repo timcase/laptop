@@ -1,3 +1,3 @@
 fancy_echo "Installing xubuntu-icon-theme..."
-sudo apt-get install -y xubuntu-icon-theme
+sudo apt-fast install -y xubuntu-icon-theme
 

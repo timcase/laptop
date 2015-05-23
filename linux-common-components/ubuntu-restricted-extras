@@ -1,11 +1,11 @@
 fancy_echo "Installing ubuntu restricted addons..."
-sudo apt-get install -y ubuntu-restricted-addons
+sudo apt-fast install -y ubuntu-restricted-addons
 
 fancy_echo "Installing gstreamer..."
-sudo apt-get install -y gstreamer0.10-plugins-bad-multiverse
+sudo apt-fast install -y gstreamer0.10-plugins-bad-multiverse
 
 fancy_echo "Installing libav-tools..."
-sudo apt-get install -y libav-tools
+sudo apt-fast install -y libav-tools
 
 fancy_echo "Installing unrar..."
-sudo apt-get install -y unrar
+sudo apt-fast install -y unrar

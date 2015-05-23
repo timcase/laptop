@@ -1,2 +1,2 @@
 fancy_echo "Installing ttf-ubuntu-font-family"
-sudo apt-get install -y ttf-ubuntu-font-family
+sudo apt-fast install -y ttf-ubuntu-font-family

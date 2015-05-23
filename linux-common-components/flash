@@ -1,2 +1,2 @@
 fancy_echo "Installing flash plugin..."
-sudo apt-get install -y flashplugin-installer
+sudo apt-fast install -y flashplugin-installer

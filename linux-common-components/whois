@@ -1,2 +1,2 @@
 fancy_echo "Installing whois..."
-sudo apt-get install -y whois
+sudo apt-fast install -y whois

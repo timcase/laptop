@@ -1,4 +1,4 @@
-sudo apt-get install -y python-software-properties
+sudo apt-fast install -y python-software-properties
 #sudo add-apt-repository -y ppa:rwky/redis 
-#sudo apt-get update 
-sudo apt-get install -y redis-server
+#sudo apt-fast update 
+sudo apt-fast install -y redis-server

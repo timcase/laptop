@@ -1,2 +1,2 @@
 fancy_echo "Installing ubuntu software center..."
-sudo apt-get install -y software-center
+sudo apt-fast install -y software-center

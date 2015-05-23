@@ -1,2 +1,2 @@
 fancy_echo "Installing pidgin..."
-sudo apt-get install -y pidgin
+sudo apt-fast install -y pidgin

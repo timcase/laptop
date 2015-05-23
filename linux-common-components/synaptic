@@ -1,2 +1,2 @@
 fancy_echo "Installing synaptic..."
-sudo apt-get install -y synaptic
+sudo apt-fast install -y synaptic

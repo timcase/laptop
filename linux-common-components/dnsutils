@@ -1,3 +1,3 @@
 fancy_echo "Installing DNS utils"
 
-sudo apt-get -y install dnsutils
+sudo apt-fast -y install dnsutils

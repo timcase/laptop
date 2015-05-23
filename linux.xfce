@@ -47,7 +47,7 @@ else
   sudo apt-get install -y aptitude
 fi
 
-sudo apt-get install -y software-properties-common python-software-properties
+sudo apt-fast install -y software-properties-common python-software-properties
 
 sudo add-apt-repository -y ppa:rwky/redis
 sudo add-apt-repository -y ppa:keithw/mosh
@@ -55,8 +55,11 @@ sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc)
 sudo add-apt-repository -y ppa:vincent-c/nevernote
 sudo apt-get install -y python-software-properties python g++ make
 sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo add-apt-repository ppa:saiarcot895/myppa
 
 sudo apt-get -y update
+
+sudo apt-get -y install apt-fast
 ### end linux-common-components/debian-package-update
 
 fancy_echo "Installing git, for source control management ..."
@@ -84,7 +87,7 @@ fancy_echo "Installing ImageMagick, to crop and resize images ..."
   sudo aptitude install -y imagemagick
 
 fancy_echo "Install ImageMagick dev tools..."
-sudo apt-get install -y libmagickcore-dev libmagickwand-dev
+sudo apt-fast install -y libmagickcore-dev libmagickwand-dev
 
 fancy_echo "Installing curl ..."
   sudo aptitude install -y curl
@@ -93,11 +96,11 @@ fancy_echo "Installing zsh ..."
   sudo aptitude install -y zsh
 
 fancy_echo "Installing libicu-dev ..."
-sudo apt-get install -y libicu-dev
+sudo apt-fast install -y libicu-dev
 ### end linux-common-components/debian-derivative-packages
 
 fancy_echo "Install ubuntu update manager..."
-sudo apt-get install -y update-manager
+sudo apt-fast install -y update-manager
 ### end linux-common-components/update-manager
 
 if ! which ag &>/dev/null; then
@@ -114,64 +117,64 @@ fi
 ### end linux-common-components/silver-searcher-from-source
 
 fancy_echo "Install bitstream vera sans"
-sudo apt-get install -y ttf-bitstream-vera
+sudo apt-fast install -y ttf-bitstream-vera
 ### end linux-common-components/vera-bitstream-sans
 
-sudo apt-get install -y python-software-properties
+sudo apt-fast install -y python-software-properties
 #sudo add-apt-repository -y ppa:rwky/redis 
-#sudo apt-get update 
-sudo apt-get install -y redis-server
+#sudo apt-fast update 
+sudo apt-fast install -y redis-server
 ### end linux-common-components/redis
 
 fancy_echo "Installing whois..."
-sudo apt-get install -y whois
+sudo apt-fast install -y whois
 ### end linux-common-components/whois
 
 fancy_echo "Install ncurses-term for 256 terminal colors"
 
-sudo apt-get -y install ncurses-term
+sudo apt-fast -y install ncurses-term
 ### end linux-common-components/ncurses-term
 
 fancy_echo "Install irssi irc client..."
 
-sudo apt-get -y install irssi
+sudo apt-fast -y install irssi
 ### end linux-common-components/irssi
 
 fancy_echo "Installing DNS utils"
 
-sudo apt-get -y install dnsutils
+sudo apt-fast -y install dnsutils
 ### end linux-common-components/dnsutils
 
 fancy_echo "Installing keychain..."
-sudo apt-get install -y keychain
+sudo apt-fast install -y keychain
 ### end linux-common-components/keychain
 
 fancy_echo "Installing kupfer..."
-sudo apt-get install -y kupfer
+sudo apt-fast install -y kupfer
 ### end linux-xfce-components/kupfer
 
 fancy_echo "Installing leafpad..."
-sudo apt-get install -y leafpad
+sudo apt-fast install -y leafpad
 ### end linux-xfce-components/leafpad
 
 fancy_echo "Installing xubuntu-icon-theme..."
-sudo apt-get install -y xubuntu-icon-theme
+sudo apt-fast install -y xubuntu-icon-theme
 
 ### end linux-xfce-components/xubuntu-icon-theme
 
-sudo apt-get install -y python-software-properties
+sudo apt-fast install -y python-software-properties
 #sudo add-apt-repository -y ppa:keithw/mosh
-#sudo apt-get update
-sudo apt-get install -y mosh
+#sudo apt-fast update
+sudo apt-fast install -y mosh
 ### end linux-common-components/mosh
 
 fancy_echo "Installing firefox..."
-sudo apt-get install -y firefox
+sudo apt-fast install -y firefox
 ### end linux-common-components/firefox
 
 fancy_echo "Installing Google Chrome..."
 cd ~
-sudo apt-get install -y libxss1 xdg-utils libnss3 libnspr4 libappindicator1
+sudo apt-fast install -y libxss1 xdg-utils libnss3 libnspr4 libappindicator1
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 rm google-chrome*.deb
@@ -232,39 +235,39 @@ curl -Lo- http://bit.ly/1jDwRX3 | bash
 ### end common-components/dotfiles
 
 fancy_echo "Installing archive formats..."
-sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-fast install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats
 
 fancy_echo "Installing ubuntu restricted addons..."
-sudo apt-get install -y ubuntu-restricted-addons
+sudo apt-fast install -y ubuntu-restricted-addons
 
 fancy_echo "Installing gstreamer..."
-sudo apt-get install -y gstreamer0.10-plugins-bad-multiverse
+sudo apt-fast install -y gstreamer0.10-plugins-bad-multiverse
 
 fancy_echo "Installing libav-tools..."
-sudo apt-get install -y libav-tools
+sudo apt-fast install -y libav-tools
 
 fancy_echo "Installing unrar..."
-sudo apt-get install -y unrar
+sudo apt-fast install -y unrar
 ### end linux-common-components/ubuntu-restricted-extras
 
 fancy_echo "Installing ubuntu software center..."
-sudo apt-get install -y software-center
+sudo apt-fast install -y software-center
 ### end linux-common-components/software-center
 
 fancy_echo "Installing synaptic..."
-sudo apt-get install -y synaptic
+sudo apt-fast install -y synaptic
 ### end linux-common-components/synaptic
 
 fancy_echo "Installing ttf-ubuntu-font-family"
-sudo apt-get install -y ttf-ubuntu-font-family
+sudo apt-fast install -y ttf-ubuntu-font-family
 ### end linux-common-components/ttf-ubuntu-font-family
 
 fancy_echo "Installing Node JS and NPM..."
-#sudo apt-get install -y python-software-properties python g++ make
+#sudo apt-fast install -y python-software-properties python g++ make
 #sudo add-apt-repository -y ppa:chris-lea/node.js
 #sudo apt-get -y update
-sudo apt-get install -y nodejs
+sudo apt-fast install -y nodejs
 
 
 fancy_echo "Install Yeoman..."
@@ -281,60 +284,60 @@ sudo npm install -g bower
 ### end linux-common-components/nodejs
 
 fancy_echo "Installing conky..."
-sudo apt-get -y install conky-all
-sudo apt-get -y install conky curl lm-sensors hddtemp
+sudo apt-fast -y install conky-all
+sudo apt-fast -y install conky curl lm-sensors hddtemp
 ### end linux-common-components/conky
 
 fancy_echo "Installing Terminator..."Terminator
-sudo apt-get -y install terminator
+sudo apt-fast -y install terminator
 ### end linux-common-components/terminator
 
 fancy_echo "Installing flash plugin..."
-sudo apt-get install -y flashplugin-installer
+sudo apt-fast install -y flashplugin-installer
 ### end linux-common-components/flash
 
 fancy_echo "Installing gimp..."
-sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
+sudo apt-fast install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
 ### end linux-common-components/gimp
 
 fancy_echo "Installing git-gui..."
-sudo apt-get install -y git-gui
+sudo apt-fast install -y git-gui
 ### end linux-common-components/git-gui
 
 fancy_echo "Installing nixnote..."
 #sudo add-apt-repository -y ppa:vincent-c/nevernote
-#sudo apt-get update
-sudo apt-get install -y nixnote
+#sudo apt-fast update
+sudo apt-fast install -y nixnote
 ### end linux-common-components/nixnote
 
 fancy_echo "Installing pidgin..."
-sudo apt-get install -y pidgin
+sudo apt-fast install -y pidgin
 ### end linux-common-components/pidgin
 
 fancy_echo "Installing Skype..."
 #sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-#sudo apt-get update
-sudo apt-get install -y skype
+#sudo apt-fast update
+sudo apt-fast install -y skype
 ### end linux-common-components/skype
 
 fancy_echo "Installing thunderbird..."
-sudo apt-get install -y thunderbird
+sudo apt-fast install -y thunderbird
 ### end linux-common-components/thunderbird
 
 fancy_echo "Installing VLC..."
-sudo apt-get install -y vlc browser-plugin-vlc
+sudo apt-fast install -y vlc browser-plugin-vlc
 ### end linux-common-components/vlc
 
 fancy_echo "Installing Xclip"
 
-sudo apt-get -y install xclip
+sudo apt-fast -y install xclip
 ### end linux-common-components/xclip
 
-sudo apt-get install -y xbacklight
+sudo apt-fast install -y xbacklight
 ### end linux-common-components/xbacklight
 
 fancy_echo "Installing wine..."
-sudo apt-get install -y wine
+sudo apt-fast install -y wine
 ### end linux-common-components/wine
 
 #fancy_echo "Installing Dropbox CLI tools..."
@@ -347,11 +350,11 @@ sudo apt-get install -y wine
 #~/bin/dropbox.py autostart y
 
 fancy_echo "Installing Dropbox..."
-sudo apt-get -y install nautilus-dropbox
+sudo apt-fast -y install nautilus-dropbox
 
 # fancy_echo "Installing Thunar integration for Dropbox..."
 # sudo add-apt-repository -y ppa:xubuntu-dev/extras
-# sudo apt-get -y update 
-# sudo apt-get -y install thunar-dropbox-plugin
+# sudo apt-fast -y update 
+# sudo apt-fast -y install thunar-dropbox-plugin
 ### end linux-common-components/dropbox
 

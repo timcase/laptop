@@ -1,2 +1,2 @@
 fancy_echo "Installing gedit..."
-sudo apt-get -y install gedit
+sudo apt-fast -y install gedit

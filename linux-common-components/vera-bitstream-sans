@@ -1,2 +1,2 @@
 fancy_echo "Install bitstream vera sans"
-sudo apt-get install -y ttf-bitstream-vera
+sudo apt-fast install -y ttf-bitstream-vera

@@ -1,2 +1,2 @@
 fancy_echo "Installing VLC..."
-sudo apt-get install -y vlc browser-plugin-vlc
+sudo apt-fast install -y vlc browser-plugin-vlc
