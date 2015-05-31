@@ -1,4 +1,4 @@
-RUBY_VERSION="2.1.0"
+RUBY_VERSION="2.2.2"
 
 fancy_echo "Installing Ruby $RUBY_VERSION ..."
   rvm install $RUBY_VERSION
