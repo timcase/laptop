@@ -25,7 +25,6 @@ linux-common-components/rvm
 common-components/ruby-environment
 linux-common-components/bundler
 common-components/default-gems
-common-components/dotfiles
 linux-common-components/archive-formats
 linux-common-components/ubuntu-restricted-extras
 linux-common-components/software-center
