@@ -157,6 +157,8 @@ fancy_echo "Installing leafpad..."
 sudo apt-fast install -y leafpad
 ### end linux-xfce-components/leafpad
 
+### end linux-xfce-components/meld
+
 fancy_echo "Installing xubuntu-icon-theme..."
 sudo apt-fast install -y xubuntu-icon-theme
 

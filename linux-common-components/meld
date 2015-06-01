@@ -1,0 +1,2 @@
+fancy_echo "Installing meld..."
+sudo apt-fast -y install meld
