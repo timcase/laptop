@@ -184,11 +184,6 @@ rm google-chrome*.deb
 
 fancy_echo "Installing chruby..."
 wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
-
-wget https://raw.github.com/postmodern/chruby/master/pkg/chruby-0.3.9.tar.gz.asc
-
-gpg --verify chruby-0.3.9.tar.gz.asc chruby-0.3.9.tar.gz
-
 tar -xzvf chruby-0.3.9.tar.gz
 cd chruby-0.3.9/
 sudo make install
@@ -198,13 +193,12 @@ rm -rf chruby-0.3.9
 rm chruby-0.3.8.tar.gz
 
 fancy_echo "Installing ruby-install..."
-wget https://raw.github.com/postmodern/ruby-install/master/pkg/ruby-install-0.5.0.tar.gz.asc
-gpg --verify ruby-install-0.5.0.tar.gz.asc ruby-install-0.5.0.tar.gz
 
 wget -O ruby-install-0.5.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.5.0.tar.gz
 tar -xzvf ruby-install-0.5.0.tar.gz
 cd ruby-install-0.5.0/
 sudo make install
+
 cd ..
 rm -rf ruby-install-0.5.0
 rm ruby-install-0.5.0.tar.gz
