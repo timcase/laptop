@@ -1,10 +1,7 @@
 RUBY_VERSION="2.2.2"
 
 fancy_echo "Installing Ruby $RUBY_VERSION ..."
-  rvm install $RUBY_VERSION
-
-fancy_echo "Setting $RUBY_VERSION as global default Ruby ..."
-  rvm --default use $RUBY_VERSION
+  ruby-install ruby $RUBY_VERSION
 
 fancy_echo "Updating to latest Rubygems version ..."
   gem update --system
@@ -12,6 +9,6 @@ fancy_echo "Updating to latest Rubygems version ..."
 fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
   gem install bundler --no-document --pre
 
-fancy_echo "Installing GitHub CLI client ..."
-  curl http://hub.github.com/standalone -sLo ~/.bin/hub
-  chmod +x ~/.bin/hub
+fancy_echo "Installing Tmuxinator"
+  gem install tmuxinator
+
