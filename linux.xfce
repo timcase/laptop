@@ -197,37 +197,6 @@ sudo make install
 
 ### end linux-common-components/chruby
 
-RUBY_VERSION="2.2.2"
-
-fancy_echo "Installing Ruby $RUBY_VERSION ..."
-  ruby-install ruby $RUBY_VERSION
-
-fancy_echo "Updating to latest Rubygems version ..."
-  gem update --system
-
-fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
-  gem install bundler --no-document --pre
-
-fancy_echo "Installing Tmuxinator"
-  gem install tmuxinator
-
-### end common-components/ruby-environment
-
-fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
-  number_of_cores=$(nproc)
-  bundle config --global jobs $((number_of_cores - 1))
-### end linux-common-components/bundler
-
-fancy_echo "Installing IRB tools ..."
-  gem install irbtools --no-document
-
-fancy_echo "Installing Capistrano 2.15.5..."
-  gem install capistrano -v '2.15.5' --no-document
-
-fancy_echo "Installing Rake..."
-  gem install rake --no-document
-### end common-components/default-gems
-
 fancy_echo "Installing archive formats..."
 sudo apt-fast install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 ### end linux-common-components/archive-formats

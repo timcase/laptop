@@ -23,9 +23,6 @@ linux-common-components/mosh
 linux-common-components/firefox
 linux-xfce-components/chrome
 linux-common-components/chruby
-common-components/ruby-environment
-linux-common-components/bundler
-common-components/default-gems
 linux-common-components/archive-formats
 linux-common-components/ubuntu-restricted-extras
 linux-common-components/software-center
