@@ -121,17 +121,20 @@ export CC=gcc-4.2
 
 RUBY_VERSION="2.2.2"
 
+fanch_echo "Installing ruby-dev..."
+sudo gem install -y ruby-dev
+
 fancy_echo "Installing Ruby $RUBY_VERSION ..."
-  ruby-install ruby $RUBY_VERSION
+ruby-install ruby $RUBY_VERSION
 
 fancy_echo "Updating to latest Rubygems version ..."
-  gem update --system
+sudo gem update --system
 
 fancy_echo "Installing Bundler to install project-specific Ruby gems ..."
-  gem install bundler --no-document --pre
+sudo gem install bundler --no-document --pre
 
 fancy_echo "Installing Tmuxinator"
-  gem install tmuxinator
+sudo gem install tmuxinator
 
 ### end common-components/ruby-environment
 
